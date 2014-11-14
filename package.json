@@ -1,0 +1,25 @@
+{
+  "name": "benchmark",
+  "version": "1.0.0",
+  "description": "Benchmarking command line and API for node modules",
+  "main": "lib/index.js",
+  "bin": {
+    "benchmark": "benchmark.js"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PropelJS/benchmark.git"
+  },
+  "keywords": [
+    "benchmark"
+  ],
+  "author": "Joshwa Fugett <jfugett27@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PropelJS/benchmark/issues"
+  },
+  "homepage": "https://github.com/PropelJS/benchmark"
+}
