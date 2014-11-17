@@ -4,7 +4,8 @@
   "description": "Benchmarking command line and API for node modules",
   "main": "lib/index.js",
   "bin": {
-    "benchmark": "benchmark.js"
+    "_benchmark": "./bin/_benchmark.js",
+    "benchmark": "./bin/benchmark.js"
   },
   "scripts": {
     "test": "gulp test"
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/PropelJS/benchmark/issues"
   },
-  "homepage": "https://github.com/PropelJS/benchmark"
+  "homepage": "https://github.com/PropelJS/benchmark",
+  "dependencies": {
+    "nomnom": "^1.8.1"
+  }
 }
