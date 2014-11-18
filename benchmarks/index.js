@@ -3,27 +3,54 @@
 /* globals suite:false, bench:false, set:false */
 
 suite('main', function * main () {
-  bench('before', function * before() {
-    console.log('before bench');
+  bench('bench', function * innerBench() {
+    console.log('bench');
+  }, {
+    before: beforeBench,
+    after: afterBench
   });
-  suite('inner', function * inner() {
-    console.log('ok');
-    bench('inner bench', function * innerBench() {
-      console.log('inner bench');
-    });
-    bench('second inner bench', function * secondInnerBench() {
-      console.log('second inner bench');
-    }, {
-      delay: 1000
+  bench('second', function * second() {
+    console.log('second bench');
+  });
+  suite('nested', function * nested() {
+    bench('nestedBench', function * nestedBench() {
+      console.log('nested bench');
     });
   }, {
-    delay: 200
+    beforeEach: function * () {
+      console.log('beforeEach nested')
+    },
+    afterEach: function * () {
+      console.log('afterEach nested')
+    }
   });
-  bench('after', function * after() {
-    console.log('after bench');
-  });
+}, {
+  before: beforeMain,
+  after: afterMain,
+  beforeEach: beforeEach,
+  afterEach: afterEach
 });
 
-suite('second', function * second () {
-  console.log('in second');
-});
+function * beforeMain() {
+  console.log('before main');
+}
+
+function * afterMain() {
+  console.log('after main');
+}
+
+function * beforeEach() {
+  console.log('before each');
+}
+
+function * afterEach() {
+  console.log('after each');
+}
+
+function * beforeBench() {
+  console.log('before bench');
+}
+
+function * afterBench() {
+  console.log('after bench');
+}
