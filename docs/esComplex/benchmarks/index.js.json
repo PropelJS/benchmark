@@ -1,0 +1,578 @@
+{
+  "aggregate": {
+    "sloc": {
+      "logical": 31,
+      "physical": 56
+    },
+    "cyclomatic": 1,
+    "halstead": {
+      "operators": {
+        "distinct": 5,
+        "total": 51,
+        "identifiers": [
+          "()",
+          "function",
+          ".",
+          "{}",
+          ":"
+        ]
+      },
+      "operands": {
+        "distinct": 34,
+        "total": 74,
+        "identifiers": [
+          "\"use strict\"",
+          "\"main\"",
+          "main",
+          "\"bench\"",
+          "innerBench",
+          "console",
+          "log",
+          "<anonymous>",
+          "before",
+          "beforeBench",
+          "after",
+          "afterBench",
+          "bench",
+          "\"second\"",
+          "second",
+          "\"second bench\"",
+          "\"nested\"",
+          "nested",
+          "\"nestedBench\"",
+          "nestedBench",
+          "\"nested bench\"",
+          "beforeEach",
+          "\"beforeEach nested\"",
+          "afterEach",
+          "\"afterEach nested\"",
+          "suite",
+          "beforeMain",
+          "afterMain",
+          "\"before main\"",
+          "\"after main\"",
+          "\"before each\"",
+          "\"after each\"",
+          "\"before bench\"",
+          "\"after bench\""
+        ]
+      },
+      "length": 125,
+      "vocabulary": 39,
+      "difficulty": 5.441176470588235,
+      "volume": 660.675277357781,
+      "effort": 3594.850773858514,
+      "bugs": 0.2202250924525937,
+      "time": 199.71393188102854
+    },
+    "params": 0,
+    "line": 1,
+    "cyclomaticDensity": 3.225806451612903
+  },
+  "functions": [
+    {
+      "name": "main",
+      "sloc": {
+        "logical": 7,
+        "physical": 23
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 4,
+          "total": 14,
+          "identifiers": [
+            "()",
+            "function",
+            "{}",
+            ":"
+          ]
+        },
+        "operands": {
+          "distinct": 15,
+          "total": 19,
+          "identifiers": [
+            "\"bench\"",
+            "innerBench",
+            "<anonymous>",
+            "before",
+            "beforeBench",
+            "after",
+            "afterBench",
+            "bench",
+            "\"second\"",
+            "second",
+            "\"nested\"",
+            "nested",
+            "beforeEach",
+            "afterEach",
+            "suite"
+          ]
+        },
+        "length": 33,
+        "vocabulary": 19,
+        "difficulty": 2.533333333333333,
+        "volume": 140.1816079436383,
+        "effort": 355.12674012388374,
+        "bugs": 0.04672720264787944,
+        "time": 19.729263340215763
+      },
+      "params": 0,
+      "line": 5,
+      "cyclomaticDensity": 14.285714285714285
+    },
+    {
+      "name": "innerBench",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"bench\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 6,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "second",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"second bench\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 12,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "nested",
+      "sloc": {
+        "logical": 1,
+        "physical": 5
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "function"
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"nestedBench\"",
+            "nestedBench",
+            "bench"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 15,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "nestedBench",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"nested bench\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 16,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "beforeEach",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"beforeEach nested\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 20,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "afterEach",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"afterEach nested\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 23,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "beforeMain",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"before main\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 34,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "afterMain",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"after main\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 38,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "beforeEach",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"before each\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 42,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "afterEach",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"after each\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 46,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "beforeBench",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"before bench\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 50,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "afterBench",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"after bench\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 54,
+      "cyclomaticDensity": 100
+    }
+  ],
+  "dependencies": [
+  ],
+  "maintainability": 89.12787244732137,
+  "params": 0,
+  "meta": {
+    "analysis": "gulp-escomplex",
+    "analysisVersion": "1.0.1",
+    "fileName": "benchmarks\index.js"
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "aggregate": {
+    "sloc": {
+      "logical": 21,
+      "physical": 37
+    },
+    "cyclomatic": 1,
+    "halstead": {
+      "operators": {
+        "distinct": 7,
+        "total": 60,
+        "identifiers": [
+          "var",
+          "=",
+          "()",
+          "function",
+          ".",
+          "new",
+          "{}"
+        ]
+      },
+      "operands": {
+        "distinct": 30,
+        "total": 83,
+        "identifiers": [
+          "\"use strict\"",
+          "Suite",
+          "\"./suite\"",
+          "require",
+          "Runner",
+          "opts",
+          "this",
+          "root",
+          "suites",
+          "<anonymous>",
+          "currentSuite",
+          "prototype",
+          "setup",
+          "global",
+          "suite",
+          "bind",
+          "bench",
+          "name",
+          "fn",
+          "addSuite",
+          "addBench",
+          "loadFiles",
+          "file",
+          "run",
+          "results",
+          "\"Results would be returned here in JSON format\"",
+          "console",
+          "log",
+          "module",
+          "exports"
+        ]
+      },
+      "length": 143,
+      "vocabulary": 37,
+      "difficulty": 9.683333333333334,
+      "volume": 744.9518312849399,
+      "effort": 7213.616899609168,
+      "bugs": 0.24831727709497997,
+      "time": 400.7564944227316
+    },
+    "params": 8,
+    "line": 1,
+    "cyclomaticDensity": 4.761904761904762
+  },
+  "functions": [
+    {
+      "name": "Runner",
+      "sloc": {
+        "logical": 4,
+        "physical": 6
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 4,
+          "total": 11,
+          "identifiers": [
+            "=",
+            ".",
+            "new",
+            "{}"
+          ]
+        },
+        "operands": {
+          "distinct": 7,
+          "total": 15,
+          "identifiers": [
+            "opts",
+            "this",
+            "root",
+            "Suite",
+            "suites",
+            "<anonymous>",
+            "currentSuite"
+          ]
+        },
+        "length": 26,
+        "vocabulary": 11,
+        "difficulty": 4.285714285714286,
+        "volume": 89.94522208456974,
+        "effort": 385.47952321958456,
+        "bugs": 0.02998174069485658,
+        "time": 21.415529067754697
+      },
+      "params": 1,
+      "line": 5,
+      "cyclomaticDensity": 25
+    },
+    {
+      "name": "setup",
+      "sloc": {
+        "logical": 2,
+        "physical": 4
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 3,
+          "total": 10,
+          "identifiers": [
+            "=",
+            ".",
+            "()"
+          ]
+        },
+        "operands": {
+          "distinct": 5,
+          "total": 12,
+          "identifiers": [
+            "global",
+            "suite",
+            "this",
+            "bind",
+            "bench"
+          ]
+        },
+        "length": 22,
+        "vocabulary": 8,
+        "difficulty": 3.5999999999999996,
+        "volume": 66,
+        "effort": 237.59999999999997,
+        "bugs": 0.022,
+        "time": 13.199999999999998
+      },
+      "params": 0,
+      "line": 12,
+      "cyclomaticDensity": 50
+    },
+    {
+      "name": "suite",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 3,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 6,
+          "total": 9,
+          "identifiers": [
+            "name",
+            "fn",
+            "opts",
+            "this",
+            "currentSuite",
+            "addSuite"
+          ]
+        },
+        "length": 12,
+        "vocabulary": 8,
+        "difficulty": 1.5,
+        "volume": 36,
+        "effort": 54,
+        "bugs": 0.012,
+        "time": 3
+      },
+      "params": 3,
+      "line": 17,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "bench",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 3,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 6,
+          "total": 9,
+          "identifiers": [
+            "name",
+            "fn",
+            "opts",
+            "this",
+            "currentSuite",
+            "addBench"
+          ]
+        },
+        "length": 12,
+        "vocabulary": 8,
+        "difficulty": 1.5,
+        "volume": 36,
+        "effort": 54,
+        "bugs": 0.012,
+        "time": 3
+      },
+      "params": 3,
+      "line": 21,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "loadFiles",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 1,
+          "total": 1,
+          "identifiers": [
+            "()"
+          ]
+        },
+        "operands": {
+          "distinct": 2,
+          "total": 3,
+          "identifiers": [
+            "file",
+            "require"
+          ]
+        },
+        "length": 4,
+        "vocabulary": 3,
+        "difficulty": 0.75,
+        "volume": 6.339850002884625,
+        "effort": 4.754887502163469,
+        "bugs": 0.002113283334294875,
+        "time": 0.2641604167868594
+      },
+      "params": 1,
+      "line": 25,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "run",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 0,
+          "total": 0,
+          "identifiers": [
+          ]
+        },
+        "operands": {
+          "distinct": 0,
+          "total": 0,
+          "identifiers": [
+          ]
+        },
+        "length": 0,
+        "time": 0,
+        "bugs": 0,
+        "effort": 0,
+        "volume": 0,
+        "difficulty": 0,
+        "vocabulary": 0
+      },
+      "params": 0,
+      "line": 29,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "results",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "\"Results would be returned here in JSON format\"",
+            "console",
+            "log"
+          ]
+        },
+        "length": 5,
+        "vocabulary": 5,
+        "difficulty": 1,
+        "volume": 11.60964047443681,
+        "effort": 11.60964047443681,
+        "bugs": 0.0038698801581456034,
+        "time": 0.6449800263576005
+      },
+      "params": 0,
+      "line": 33,
+      "cyclomaticDensity": 100
+    }
+  ],
+  "dependencies": [
+    {
+      "line": 3,
+      "path": "./suite",
+      "type": "CommonJS"
+    },
+    {
+      "line": 26,
+      "path": "* dynamic dependency *",
+      "type": "CommonJS"
+    }
+  ],
+  "maintainability": 86.37653705878222,
+  "params": 1.1428571428571428,
+  "meta": {
+    "analysis": "gulp-escomplex",
+    "analysisVersion": "1.0.1",
+    "fileName": "lib\runner.js"
+  }
+}

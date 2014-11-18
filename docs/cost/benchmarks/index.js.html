@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Estimated Cost Analysis</title>
+  <style type="text/css">
+    body {
+      background-color: #348;
+    }
+    table {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+      background-color: #003;
+      padding: 0;
+    }
+    td {
+      border-right: 1px solid #C1DAD7;
+      border-bottom: 1px solid #C1DAD7;
+      padding: 6px 6px 6px 12px;
+      color: #447777;
+    }
+    .header td{
+      background-color: #ddd;
+    }
+    tr {
+      background-color: #fff;
+    }
+    tr:nth-child(2n+1){
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+<p style="color: #FFF700">These metrics are not meant to be used as law but are a relative measure of the quality
+  and cost of a program</p>
+<a href="index.html" style="color: #fff;">Back to Overview</a>
+<table>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Maintainability</td>
+    <td style="color: #0f0;">89.13</td>
+    <td>This is the relative maintainability of the file on a scale of 0-100. Higher is better.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>5.44</td>
+    <td>This is a measure of how difficult it is to understand the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the code is based on the number of paths through the code. Lower is better</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>3.23</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>3594.85</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.06 Hours</td>
+    <td>This is the estimated amount of time needed to write the file based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$2.60</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.22</td>
+    <td>This is the estimated number of bugs in the file.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>31</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>56</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+<p style="color: #fff;">Dependencies:</p>
+<table>
+  <tr class="header">
+    <td>Name</td>
+    <td>Line #</td>
+    <td>Type</td>
+  </tr>
+  
+</table>
+
+<p style="color: #fff;">Functions:</p>
+
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">main</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>5</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>2.53</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>14.29</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>355.13</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.33 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$2.56</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.05</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>7</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>23</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">innerBench</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>6</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">second</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>12</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">nested</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>15</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>5</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">nestedBench</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>16</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">beforeEach</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>20</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">afterEach</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>23</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">beforeMain</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>34</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">afterMain</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>38</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">beforeEach</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>42</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">afterEach</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>46</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">beforeBench</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>50</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3" style="text-align: center">afterBench</td>
+  </tr>
+  <tr class="header">
+    <td>Metric</td>
+    <td>Value</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Line #</td>
+    <td>54</td>
+    <td>The line the function appears on.</td>
+  </tr>
+  <tr>
+    <td>Parameters</td>
+    <td>0</td>
+    <td>The number of parameters the function takes.</td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>1.00</td>
+    <td>This is a measure of how difficult the method is to understand. Lower is better.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Cyclomatic Complexity</td>
+    <td style="color: #0f0;">1</td>
+    <td>This is how complex the method is based on the number of paths through the code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Cyclomatic Density</td>
+    <td>100.00</td>
+    <td>This is a re-expression of the above metric as a percentage based on the lines of code. Lower is better.</td>
+  </tr>
+  <tr>
+    <td>Effort</td>
+    <td>11.61</td>
+    <td>This is the amount of effort needed to write the code based on it's difficulty and length.</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>0.01 Minutes</td>
+    <td>This is the estimated amount of time needed to write the method based on the effort required.</td>
+  </tr>
+  <tr>
+    <td>Cost</td>
+    <td>$0.08</td>
+    <td>This is the estimated cost to develop the file based on the time needed to develop it.</td>
+  </tr>
+  <tr>
+    <td style="color: #0f0;">Bugs</td>
+    <td style="color: #0f0;">0.00</td>
+    <td>This is the estimated number of bugs in the method.</td>
+  </tr>
+  <tr>
+    <td>Logical SLOC</td>
+    <td>1</td>
+    <td>This is the number of lines of software that are considered logic.</td>
+  </tr>
+  <tr>
+    <td>Physical SLOC</td>
+    <td>3</td>
+    <td>This is the total lines of source code including up to 25% whitespace, but ignoring excessive formatting.</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -39,21 +39,21 @@ cli.option('mintime', {
   default: 10000
 });
 cli.option('timeout', {
-  'abbr': 't',
-  'help': 'The default timeout for a benchmark to run in ms',
+  abbr: 't',
+  help: 'The default timeout for a benchmark to run in ms',
   default: 2000
 });
 cli.option('reporter', {
-  'abbr': 'r',
-  'help': 'The reporter to use',
-  'choices': ['clean', 'plain', 'json'],
-  'default': 'clean'
+  abbr: 'r',
+  help: 'The reporter to use',
+  choices: ['clean', 'plain', 'json'],
+  default: 'clean'
 });
 cli.option('path', {
-  'help': 'The directory or file to run',
-  'default': 'benchmarks',
-  'position': 0,
-  'type': 'string'
+  help: 'The directory or file to run',
+  default: 'benchmarks',
+  position: 0,
+  type: 'string'
 });
 
 var opts = cli.parse();

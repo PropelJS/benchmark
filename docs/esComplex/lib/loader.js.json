@@ -1,0 +1,284 @@
+{
+  "aggregate": {
+    "sloc": {
+      "logical": 35,
+      "physical": 66
+    },
+    "cyclomatic": 6,
+    "halstead": {
+      "operators": {
+        "distinct": 17,
+        "total": 78,
+        "identifiers": [
+          "var",
+          "=",
+          "()",
+          ".",
+          "function",
+          "return",
+          "new",
+          "if",
+          "else",
+          "===",
+          "throw",
+          "+",
+          "while",
+          "<",
+          "++ (postfix)",
+          "&&",
+          "! (prefix)"
+        ]
+      },
+      "operands": {
+        "distinct": 42,
+        "total": 76,
+        "identifiers": [
+          "\"use strict\"",
+          "fsp",
+          "\"co-fs-plus\"",
+          "require",
+          "fs",
+          "\"co-fs\"",
+          "path",
+          "\"path\"",
+          "gen",
+          "\"gen\"",
+          "run",
+          "Runner",
+          "\"./runner\"",
+          "Reporter",
+          "\"./reporter\"",
+          "loader",
+          "opts",
+          "cb",
+          "fileStats",
+          "runner",
+          "setup",
+          "isFile",
+          "files",
+          "length",
+          0,
+          "\"No test files found in \"",
+          "Error",
+          "i",
+          "results",
+          "cli",
+          "silent",
+          "reporter",
+          "prototype",
+          "_filterFileNames",
+          "filename",
+          "ext",
+          "extname",
+          "\".js\"",
+          1,
+          0,
+          "module",
+          "exports"
+        ]
+      },
+      "length": 154,
+      "vocabulary": 59,
+      "difficulty": 15.380952380952381,
+      "volume": 905.9270296017236,
+      "effort": 13934.020502921749,
+      "bugs": 0.30197567653390783,
+      "time": 774.1122501623194
+    },
+    "params": 3,
+    "line": 1,
+    "cyclomaticDensity": 17.142857142857142
+  },
+  "functions": [
+    {
+      "name": "loader",
+      "sloc": {
+        "logical": 1,
+        "physical": 44
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 3,
+          "total": 4,
+          "identifiers": [
+            "return",
+            "()",
+            "function"
+          ]
+        },
+        "operands": {
+          "distinct": 4,
+          "total": 5,
+          "identifiers": [
+            "opts",
+            "cb",
+            "loader",
+            "run"
+          ]
+        },
+        "length": 9,
+        "vocabulary": 7,
+        "difficulty": 1.875,
+        "volume": 25.26619429851844,
+        "effort": 47.374114309722074,
+        "bugs": 0.008422064766172813,
+        "time": 2.6318952394290043
+      },
+      "params": 2,
+      "line": 11,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "loader",
+      "sloc": {
+        "logical": 19,
+        "physical": 42
+      },
+      "cyclomatic": 5,
+      "halstead": {
+        "operators": {
+          "distinct": 16,
+          "total": 38,
+          "identifiers": [
+            "var",
+            "=",
+            "new",
+            "()",
+            ".",
+            "if",
+            "else",
+            "===",
+            "throw",
+            "+",
+            "while",
+            "<",
+            "++ (postfix)",
+            "&&",
+            "! (prefix)",
+            "return"
+          ]
+        },
+        "operands": {
+          "distinct": 18,
+          "total": 32,
+          "identifiers": [
+            "fileStats",
+            "runner",
+            "opts",
+            "Runner",
+            "setup",
+            "isFile",
+            "files",
+            "length",
+            0,
+            "\"No test files found in \"",
+            "path",
+            "Error",
+            "i",
+            "results",
+            "cli",
+            "silent",
+            "reporter",
+            "Reporter"
+          ]
+        },
+        "length": 70,
+        "vocabulary": 34,
+        "difficulty": 14.222222222222221,
+        "volume": 356.1223988875238,
+        "effort": 5064.851895289227,
+        "bugs": 0.11870746629584127,
+        "time": 281.3806608494015
+      },
+      "params": 0,
+      "line": 12,
+      "cyclomaticDensity": 26.31578947368421
+    },
+    {
+      "name": "_filterFileNames",
+      "sloc": {
+        "logical": 4,
+        "physical": 9
+      },
+      "cyclomatic": 2,
+      "halstead": {
+        "operators": {
+          "distinct": 7,
+          "total": 8,
+          "identifiers": [
+            "var",
+            "=",
+            "()",
+            ".",
+            "if",
+            "===",
+            "return"
+          ]
+        },
+        "operands": {
+          "distinct": 7,
+          "total": 9,
+          "identifiers": [
+            "filename",
+            "ext",
+            "path",
+            "extname",
+            "\".js\"",
+            1,
+            0
+          ]
+        },
+        "length": 17,
+        "vocabulary": 14,
+        "difficulty": 4.5,
+        "volume": 64.72503367497926,
+        "effort": 291.26265153740667,
+        "bugs": 0.021575011224993085,
+        "time": 16.181258418744815
+      },
+      "params": 1,
+      "line": 56,
+      "cyclomaticDensity": 50
+    }
+  ],
+  "dependencies": [
+    {
+      "line": 3,
+      "path": "co-fs-plus",
+      "type": "CommonJS"
+    },
+    {
+      "line": 4,
+      "path": "co-fs",
+      "type": "CommonJS"
+    },
+    {
+      "line": 5,
+      "path": "path",
+      "type": "CommonJS"
+    },
+    {
+      "line": 6,
+      "path": "gen",
+      "type": "CommonJS"
+    },
+    {
+      "line": 8,
+      "path": "./runner",
+      "type": "CommonJS"
+    },
+    {
+      "line": 9,
+      "path": "./reporter",
+      "type": "CommonJS"
+    }
+  ],
+  "maintainability": 65.17572753013651,
+  "params": 1,
+  "meta": {
+    "analysis": "gulp-escomplex",
+    "analysisVersion": "1.0.1",
+    "fileName": "lib\loader.js"
+  }
+}

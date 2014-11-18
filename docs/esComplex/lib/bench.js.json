@@ -1,0 +1,370 @@
+{
+  "aggregate": {
+    "sloc": {
+      "logical": 50,
+      "physical": 82
+    },
+    "cyclomatic": 12,
+    "halstead": {
+      "operators": {
+        "distinct": 14,
+        "total": 112,
+        "identifiers": [
+          "var",
+          "=",
+          ".",
+          "()",
+          "function",
+          "if",
+          "! (prefix)",
+          "{}",
+          "delete (prefix)",
+          "while",
+          "<=",
+          "+=",
+          "<",
+          "++ (postfix)"
+        ]
+      },
+      "operands": {
+        "distinct": 36,
+        "total": 135,
+        "identifiers": [
+          "\"use strict\"",
+          "extend",
+          "\"util\"",
+          "require",
+          "_extend",
+          "gen",
+          "\"gen\"",
+          "Bench",
+          "suite",
+          "name",
+          "fn",
+          "opts",
+          "<anonymous>",
+          "this",
+          "before",
+          "after",
+          "overrides",
+          "prototype",
+          "run",
+          "parent",
+          "currentObject",
+          "i",
+          1,
+          "iterations",
+          "concurrency",
+          "execute",
+          "beforeEach",
+          "afterEach",
+          "runBeforeEach",
+          0,
+          "length",
+          "runAfterEach",
+          "set",
+          "value",
+          "module",
+          "exports"
+        ]
+      },
+      "length": 247,
+      "vocabulary": 50,
+      "difficulty": 26.25,
+      "volume": 1394.032478874357,
+      "effort": 36593.35257045187,
+      "bugs": 0.46467749295811894,
+      "time": 2032.9640316917705
+    },
+    "params": 11,
+    "line": 1,
+    "cyclomaticDensity": 24
+  },
+  "functions": [
+    {
+      "name": "Bench",
+      "sloc": {
+        "logical": 11,
+        "physical": 16
+      },
+      "cyclomatic": 4,
+      "halstead": {
+        "operators": {
+          "distinct": 7,
+          "total": 30,
+          "identifiers": [
+            "if",
+            "! (prefix)",
+            "=",
+            "{}",
+            ".",
+            "()",
+            "delete (prefix)"
+          ]
+        },
+        "operands": {
+          "distinct": 10,
+          "total": 38,
+          "identifiers": [
+            "suite",
+            "name",
+            "fn",
+            "opts",
+            "<anonymous>",
+            "this",
+            "extend",
+            "before",
+            "after",
+            "overrides"
+          ]
+        },
+        "length": 68,
+        "vocabulary": 17,
+        "difficulty": 13.299999999999999,
+        "volume": 277.94747320502313,
+        "effort": 3696.701393626807,
+        "bugs": 0.0926491577350077,
+        "time": 205.37229964593374
+      },
+      "params": 4,
+      "line": 6,
+      "cyclomaticDensity": 36.36363636363637
+    },
+    {
+      "name": "run",
+      "sloc": {
+        "logical": 10,
+        "physical": 17
+      },
+      "cyclomatic": 3,
+      "halstead": {
+        "operators": {
+          "distinct": 8,
+          "total": 27,
+          "identifiers": [
+            "=",
+            ".",
+            "()",
+            "var",
+            "if",
+            "while",
+            "<=",
+            "+="
+          ]
+        },
+        "operands": {
+          "distinct": 12,
+          "total": 32,
+          "identifiers": [
+            "this",
+            "opts",
+            "overrides",
+            "extend",
+            "parent",
+            "suite",
+            "currentObject",
+            "fn",
+            "i",
+            1,
+            "iterations",
+            "concurrency"
+          ]
+        },
+        "length": 59,
+        "vocabulary": 20,
+        "difficulty": 10.666666666666666,
+        "volume": 254.9937575983544,
+        "effort": 2719.9334143824467,
+        "bugs": 0.08499791919945146,
+        "time": 151.10741191013594
+      },
+      "params": 0,
+      "line": 23,
+      "cyclomaticDensity": 30
+    },
+    {
+      "name": "execute",
+      "sloc": {
+        "logical": 10,
+        "physical": 20
+      },
+      "cyclomatic": 5,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 8,
+          "identifiers": [
+            "if",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 7,
+          "total": 11,
+          "identifiers": [
+            "fn",
+            "opts",
+            "suite",
+            "beforeEach",
+            "before",
+            "after",
+            "afterEach"
+          ]
+        },
+        "length": 19,
+        "vocabulary": 9,
+        "difficulty": 1.5714285714285714,
+        "volume": 60.22857502740394,
+        "effort": 94.64490361449191,
+        "bugs": 0.020076191675801314,
+        "time": 5.258050200805106
+      },
+      "params": 3,
+      "line": 41,
+      "cyclomaticDensity": 50
+    },
+    {
+      "name": "runBeforeEach",
+      "sloc": {
+        "logical": 4,
+        "physical": 7
+      },
+      "cyclomatic": 2,
+      "halstead": {
+        "operators": {
+          "distinct": 6,
+          "total": 7,
+          "identifiers": [
+            "var",
+            "=",
+            "while",
+            "<",
+            ".",
+            "++ (postfix)"
+          ]
+        },
+        "operands": {
+          "distinct": 5,
+          "total": 8,
+          "identifiers": [
+            "suite",
+            "i",
+            0,
+            "beforeEach",
+            "length"
+          ]
+        },
+        "length": 15,
+        "vocabulary": 11,
+        "difficulty": 4.800000000000001,
+        "volume": 51.89147427955947,
+        "effort": 249.07907654188548,
+        "bugs": 0.01729715809318649,
+        "time": 13.837726474549193
+      },
+      "params": 1,
+      "line": 62,
+      "cyclomaticDensity": 50
+    },
+    {
+      "name": "runAfterEach",
+      "sloc": {
+        "logical": 4,
+        "physical": 7
+      },
+      "cyclomatic": 2,
+      "halstead": {
+        "operators": {
+          "distinct": 6,
+          "total": 7,
+          "identifiers": [
+            "var",
+            "=",
+            "while",
+            "<",
+            ".",
+            "++ (postfix)"
+          ]
+        },
+        "operands": {
+          "distinct": 5,
+          "total": 8,
+          "identifiers": [
+            "suite",
+            "i",
+            0,
+            "afterEach",
+            "length"
+          ]
+        },
+        "length": 15,
+        "vocabulary": 11,
+        "difficulty": 4.800000000000001,
+        "volume": 51.89147427955947,
+        "effort": 249.07907654188548,
+        "bugs": 0.01729715809318649,
+        "time": 13.837726474549193
+      },
+      "params": 1,
+      "line": 70,
+      "cyclomaticDensity": 50
+    },
+    {
+      "name": "set",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 3,
+          "identifiers": [
+            "=",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 4,
+          "total": 6,
+          "identifiers": [
+            "name",
+            "value",
+            "this",
+            "opts"
+          ]
+        },
+        "length": 9,
+        "vocabulary": 6,
+        "difficulty": 1.5,
+        "volume": 23.264662506490403,
+        "effort": 34.89699375973561,
+        "bugs": 0.007754887502163467,
+        "time": 1.938721875540867
+      },
+      "params": 2,
+      "line": 78,
+      "cyclomaticDensity": 100
+    }
+  ],
+  "dependencies": [
+    {
+      "line": 3,
+      "path": "util",
+      "type": "CommonJS"
+    },
+    {
+      "line": 4,
+      "path": "gen",
+      "type": "CommonJS"
+    }
+  ],
+  "maintainability": 67.75076668761947,
+  "params": 1.8333333333333333,
+  "meta": {
+    "analysis": "gulp-escomplex",
+    "analysisVersion": "1.0.1",
+    "fileName": "lib\bench.js"
+  }
+}

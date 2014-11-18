@@ -1,6 +1,6 @@
 'use strict';
 
-/* globals suite:false, bench:false, set:false */
+/* globals suite:false, bench:false */
 
 suite('main', function * main () {
   bench('bench', function * innerBench() {
@@ -18,10 +18,10 @@ suite('main', function * main () {
     });
   }, {
     beforeEach: function * () {
-      console.log('beforeEach nested')
+      console.log('beforeEach nested');
     },
     afterEach: function * () {
-      console.log('afterEach nested')
+      console.log('afterEach nested');
     }
   });
 }, {

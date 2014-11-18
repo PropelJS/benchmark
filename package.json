@@ -29,5 +29,12 @@
     "force-harmony": "git://github.com/PropelJS/force-harmony",
     "gen": "git://github.com/PropelJS/gen",
     "nomnom": "^1.8.1"
+  },
+  "devDependencies": {
+    "co-mocha": "^1.1.0",
+    "gulp": "^3.8.10",
+    "gulp-module": "git://github.com/PropelJS/gulp-module",
+    "mocha": "^2.0.1",
+    "should": "^4.3.0"
   }
 }
