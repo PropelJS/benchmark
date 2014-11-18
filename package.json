@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/PropelJS/benchmark",
   "dependencies": {
+    "co-fs": "^1.2.0",
+    "co-fs-plus": "^0.3.1",
+    "force-harmony": "git://github.com/PropelJS/force-harmony",
+    "gen": "git://github.com/PropelJS/gen",
     "nomnom": "^1.8.1"
   }
 }

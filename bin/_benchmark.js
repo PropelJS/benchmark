@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 var benchmark = require('../lib/index');
 
 var cli = require('nomnom');
@@ -55,9 +57,10 @@ cli.option('path', {
 });
 
 var opts = cli.parse();
+opts.cli = true;
 
 function version() {
-  return "v1.0.0";
+  return 'v1.0.0';
 }
 
 benchmark(opts);
