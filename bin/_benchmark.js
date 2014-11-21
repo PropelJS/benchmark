@@ -28,21 +28,6 @@ cli.option('iterations', {
   help: 'Default iterations of each bench to run',
   default: 1000
 });
-cli.option('concurrency', {
-  abbr: 'c',
-  help: 'Default iterations of a bench to run at one time',
-  default: 1
-});
-cli.option('mintime', {
-  abbr: 'm',
-  help: 'The default minimum time a bench should take to run in ms',
-  default: 10000
-});
-cli.option('timeout', {
-  abbr: 't',
-  help: 'The default timeout for a benchmark to run in ms',
-  default: 2000
-});
 cli.option('reporter', {
   abbr: 'r',
   help: 'The reporter to use',
