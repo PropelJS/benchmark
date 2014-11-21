@@ -28,12 +28,12 @@ cli.option('iterations', {
   help: 'Default iterations of each bench to run',
   default: 1000
 });
-cli.option('reporter', {
+/*cli.option('reporter', {
   abbr: 'r',
   help: 'The reporter to use',
-  choices: ['clean', 'plain', 'json'],
+  choices: ['clean'],
   default: 'clean'
-});
+});*/
 cli.option('path', {
   help: 'The directory or file to run',
   default: 'benchmarks',

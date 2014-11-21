@@ -25,6 +25,7 @@
   "homepage": "https://github.com/PropelJS/benchmark",
   "dependencies": {
     "Timer": "git://github.com/PropelJS/timer",
+    "chalk": "^0.5.1",
     "co-fs": "^1.2.0",
     "co-fs-plus": "^0.3.1",
     "fast-stats": "0.0.2",
