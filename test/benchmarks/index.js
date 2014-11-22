@@ -25,3 +25,4 @@ suite('error', function * errorSuite () {
 }, {
   comp: 'any'
 });
+

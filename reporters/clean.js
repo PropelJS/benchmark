@@ -16,6 +16,7 @@ function Clean() {
 }
 
 Clean.prototype.output = function * output(data, level) {
+  console.log('here');
   if (!level) {
     level = 2;
   }
@@ -23,9 +24,10 @@ Clean.prototype.output = function * output(data, level) {
   while (i < data.length) {
     var suite = data[i];
 
-    yield * this.outputSuite(suite, level);
+    yield this.outputSuite(suite, level);
 
     i++;
+    suite = null;
   }
 };
 
@@ -44,13 +46,15 @@ Clean.prototype.outputSuite = function * outputSuite(suite, level) {
     color = chalk.red;
   }
   str += 'Suite: ' + suite.name;
+  console.log(color(str));
+  str = null;
 
   var str2 = this.addPadding(level + 1);
   str2 += '- Execution Time: ';
   str2 += chalk.cyan.dim(suiteTime);
 
-  console.log(color(str));
-  console.log(str2);
+  console.log(chalk.white(str2));
+  str2 = null;
 
   if (suite.benches) {
     var length = suite.benches.length;
@@ -60,10 +64,13 @@ Clean.prototype.outputSuite = function * outputSuite(suite, level) {
       i++;
     }
   }
+  suite.benches = null;
 
   if (suite.suites) {
     yield this.output(suite.suites, level + 2);
   }
+  suite.suites = null;
+  suite = null;
 };
 
 Clean.prototype.outputBench = function * outputBench(bench, level) {
@@ -80,6 +87,7 @@ Clean.prototype.outputBench = function * outputBench(bench, level) {
   }
   str += 'Bench: ' + bench.name;
   console.log(color(str));
+  str = null;
 
   var benchPadding = this.addPadding(level + 1);
 
@@ -88,52 +96,112 @@ Clean.prototype.outputBench = function * outputBench(bench, level) {
   str3 += chalk.cyan.dim(Math.round(bench.ops));
   str3 += chalk.cyan.dim(' \u00B1 ');
   str3 += chalk.cyan.dim(Math.round(bench.opsMoe));
-  console.log(str3);
+  console.log(chalk.white(str3));
+  str3 = null;
 
   var str4 = benchPadding;
   str4 += '- Average Execution Time: ';
   str4 += chalk.cyan.dim(yield this.formatTime(bench.mean));
-  console.log(str4);
+  console.log(chalk.white(str4));
+  str4 = null;
 
   var str5 = benchPadding;
   str5 += '- Median Execution Time: ';
   str5 += chalk.cyan.dim(yield this.formatTime(bench.median));
-  console.log(str5);
+  console.log(chalk.white(str5));
+  str5 = null;
 
   var str6 = benchPadding;
   str6 += '- Fastest Run: ';
   str6 += chalk.cyan.dim(yield this.formatTime(bench.min));
-  console.log(str6);
+  console.log(chalk.white(str6));
+  str6 = null;
 
   var str7 = benchPadding;
   str7 += '- Slowest Run: ';
   str7 += chalk.cyan.dim(yield this.formatTime(bench.max));
-  console.log(str7);
+  console.log(chalk.white(str7));
+  str7 = null;
 
   var str8 = benchPadding;
   str8 += '- Error Rate: ';
   str8 += chalk.cyan.dim(bench.errorRate + '%');
-  console.log(str8);
+  console.log(chalk.white(str8));
+  str8 = null;
 
   var moePercent = (bench.moe * 100 / bench.mean).toFixed(2);
   var str9 = benchPadding;
   str9 += '- Margin of Error: ';
   str9 += chalk.cyan.dim(moePercent + '%');
-  console.log(str9);
+  console.log(chalk.white(str9));
+  str9 = null;
 
   var str2 = benchPadding;
   str2 += '- Execution Time: ';
   str2 += chalk.cyan.dim(yield this.formatTime(bench.elapsed));
-  console.log(str2);
+  console.log(chalk.white(str2));
+  str2 = null;
 
-/*  if(bench.marks) {
-    console.log(bench.marks);
-  }*/
+  if(bench.marks) {
+    yield this.outputMarks(bench.marks, level + 3);
+  }
+
+  bench.marks = null;
 };
 
-Clean.prototype.outputMark = function * outputMark(mark, level) {
-  console.log(mark);
-  console.log(level);
+Clean.prototype.outputMarks = function * outputMarks(marks, level) {
+  var keys = Object.keys(marks);
+  var length = keys.length;
+  if (length > 1) {
+    var i = 0;
+    while (i < length) {
+      yield this.outputMark(marks[keys[i]], keys[i], level);
+      i++;
+    }
+  }
+
+  keys = null;
+};
+
+Clean.prototype.outputMark = function * outputMark(mark, name, level) {
+  var str = this.addPadding(level);
+  str += 'Mark: ' + name;
+  console.log(chalk.gray(str));
+
+  var benchPadding = this.addPadding(level + 1);
+
+  var str3 = benchPadding;
+  str3 += '- Ops Per Second: ';
+  str3 += chalk.cyan.dim(Math.round(mark.ops));
+  str3 += chalk.cyan.dim(' \u00B1 ');
+  str3 += chalk.cyan.dim(Math.round(mark.opsMoe));
+  console.log(chalk.white(str3));
+
+  var str4 = benchPadding;
+  str4 += '- Average Execution Time: ';
+  str4 += chalk.cyan.dim(yield this.formatTime(mark.mean));
+  console.log(chalk.white(str4));
+
+  var str5 = benchPadding;
+  str5 += '- Median Execution Time: ';
+  str5 += chalk.cyan.dim(yield this.formatTime(mark.median));
+  console.log(chalk.white(str5));
+
+  var str6 = benchPadding;
+  str6 += '- Fastest Run: ';
+  str6 += chalk.cyan.dim(yield this.formatTime(mark.min));
+  console.log(chalk.white(str6));
+
+  var str7 = benchPadding;
+  str7 += '- Slowest Run: ';
+  str7 += chalk.cyan.dim(yield this.formatTime(mark.max));
+  console.log(chalk.white(str7));
+
+  var moePercent = (mark.moe * 100 / mark.mean).toFixed(2);
+  var str9 = benchPadding;
+  str9 += '- Margin of Error: ';
+  str9 += chalk.cyan.dim(moePercent + '%');
+  console.log(chalk.white(str9));
 };
 
 Clean.prototype.addPadding = function addPadding(level) {

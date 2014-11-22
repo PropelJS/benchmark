@@ -28,6 +28,11 @@ cli.option('iterations', {
   help: 'Default iterations of each bench to run',
   default: 1000
 });
+cli.option('concurrency', {
+  abbr: 'c',
+  help: 'Default iterations of a bench to run at one time',
+  default: 1
+});
 /*cli.option('reporter', {
   abbr: 'r',
   help: 'The reporter to use',
