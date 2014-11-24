@@ -18,11 +18,6 @@ cli.option('silent', {
   flag: true,
   help: 'Suppresses the output'
 });
-cli.option('delay', {
-  abbr: 'd',
-  help: 'Default delay between each iteration in ms.',
-  default: 100
-});
 cli.option('iterations', {
   abbr: 'i',
   help: 'Default iterations of each bench to run',
@@ -33,12 +28,26 @@ cli.option('concurrency', {
   help: 'Default iterations of a bench to run at one time',
   default: 1
 });
-/*cli.option('reporter', {
+cli.option('delay', {
+  abbr: 'd',
+  help: 'Default delay between each iteration in ms',
+  default: 0
+});
+cli.option('minTime', {
+  abbr: 'm',
+  help: 'The minimum time to run the tests in ms',
+  default: 1000
+});
+cli.option('timeOut', {
+  abbr: 't',
+  help: 'The timeout for a single run in ms',
+  default: 1000
+});
+cli.option('reporter', {
   abbr: 'r',
   help: 'The reporter to use',
-  choices: ['clean'],
   default: 'clean'
-});*/
+});
 cli.option('path', {
   help: 'The directory or file to run',
   default: 'benchmarks',
