@@ -1,55 +1,9 @@
 'use strict';
 
-var Stats = require('fast-stats').Stats;
-
-/**
- * Returns the results in object format
- */
-Runner.prototype.results = function * results() {
-  var res = yield this.root.getResults();
-
-  res = yield this.calculateResults(res.suites);
-  return res;
-};
-
-Runner.prototype.calculateResults = function * calculateResults(results) {
-  var ret = [];
-
-  var length = results.length;
-  var i = 0;
-  while (i < length) {
-    var suiteResult = yield this.calculateSuite(results[i]);
-    ret.push(suiteResult);
-    i++;
-  }
-
-  return ret;
-};
-
 Runner.prototype.calculateSuite = function * calculateSuite(suite) {
   var data = {};
   var timer = new Timer();
   var marksLength = yield suite.timing._marks.length;
-  var start = yield timer.toNano(suite.timing._marks[0].time);
-  var stop = yield timer.toNano(suite.timing._marks[marksLength - 1].time);
-
-  data.name = suite.name;
-  data.elapsed = stop - start;
-
-  if (suite.suites) {
-    data.suites = yield this.calculateResults(suite.suites);
-  }
-
-  if (suite.benches) {
-    data.benches = [];
-    var length = suite.benches.length;
-    var i = 0;
-    while (i < length) {
-      var benchResult = yield this.calculateBench(suite.benches[i]);
-      data.benches.push(benchResult);
-      i++;
-    }
-  }
 
   // need to determine error or success here
   data.success = null;
@@ -106,31 +60,7 @@ Runner.prototype.calculateComp = function calculateComp(data, comp) {
 };
 
 Runner.prototype.calculateBench = function * calculateBench(bench) {
-  var data = {};
-  var timer = new Timer();
-
-  var marksLength = bench.timer._marks.length;
-  var start = yield timer.toNano(bench.timer._marks[0].time);
-  var stop = yield timer.toNano(bench.timer._marks[marksLength - 1].time);
-
-  data.name = bench.name;
-  data.elapsed = stop - start;
-  data.totalRuns = bench.runs.length;
-
-  yield this.calculateRuns(bench.runs, data);
-
-  data.success = null;
-
-  if (bench.minOps) {
-    data.success = true;
-    if (data.ops < bench.minOps) {
-      data.success = false;
-    }
-  }
-
   data.marks = yield this.calculateMarks(bench.runs);
-
-  return data;
 };
 
 Runner.prototype.calculateMarks = function * calculateMarks(runs) {
@@ -167,59 +97,6 @@ Runner.prototype.calculateMarks = function * calculateMarks(runs) {
   times = null;
 
   return obj;
-};
-
-Runner.prototype.calculateRuns = function * calculateRuns(runs, data) {
-  var timer = new Timer();
-  var times = [];
-  var length = runs.length;
-  var errorCount = 0;
-  var totalTime = 0;
-
-  var i = 0;
-
-  while (i < length) {
-    var time = runs[i];
-    if (!time.error) {
-      var start = yield timer.toNano(time._marks[0].time);
-      var stop = yield timer.toNano(time._marks[time._marks.length - 1].time);
-      var executionTime = stop - start;
-
-      times.push(executionTime);
-      totalTime += executionTime;
-      i++;
-    } else {
-      errorCount++;
-    }
-  }
-
-  this.getStats(times, data);
-
-  data.errorCount = errorCount;
-  data.errorRate = (errorCount / length);
-  data.errorRate = data.errorRate.toFixed(2);
-
-  times = null;
-};
-
-Runner.prototype.getStats = function getStats(vals, obj) {
-  var stats = new Stats().push(vals);
-  stats = stats.iqr();
-
-  obj.mean = stats.amean();
-  obj.firstQuarter = stats.percentile(25);
-  obj.thirdQuarter = stats.percentile(75);
-  obj.median = stats.median();
-  var range = stats.range();
-  obj.min = range[0];
-  obj.max = range[1];
-  obj.stddev = stats.stddev();
-  obj.moe = stats.moe();
-
-  obj.ops = 1e9 / obj.mean;
-  obj.opsMoe = (1e9 / (obj.mean - obj.moe)) - obj.ops;
-
-  stats = null;
 };
 
 module.exports = Runner;
