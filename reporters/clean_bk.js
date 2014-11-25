@@ -1,22 +1,4 @@
-'use strict';
-
-var chalk = require('chalk');
-var check = '✓';
-var err = '✖';
-//var dot = '․';
-
-if (process.platform === 'win32') {
-  check = '\u221A';
-  err = '\u00D7';
-//  dot = '.';
-}
-
-function Clean() {
-
-}
-
 Clean.prototype.output = function * output(data, level) {
-  console.log('here');
   if (!level) {
     level = 2;
   }

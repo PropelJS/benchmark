@@ -6,15 +6,20 @@ var gen = require('gen');
 suite('main', function * main () {
   suite('nested', function * nested () {
     bench('delay', function * delayed () {
-      gen.delay(100);
+      yield gen.delay(100);
     });
+  }, {
+    minOps: 1000
   });
   bench('bench', function * innerBench (timer) {
     timer.mark('ok');
     return true;
   });
 }, {
-  comp: 'bench'
+  comp: 'bench',
+  minOps: 1,
+//  iterations: 1000000,
+//  concurrency: 100000
 });
 suite('error', function * errorSuite () {
   bench('error', function * errorBench() {
@@ -23,6 +28,8 @@ suite('error', function * errorSuite () {
     minOps: 1e9
   });
 }, {
-  comp: 'any'
+  comp: 'any',
+//  iterations: 1000000,
+//  concurrency: 100000
 });
 

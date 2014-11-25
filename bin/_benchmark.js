@@ -21,12 +21,12 @@ cli.option('silent', {
 cli.option('iterations', {
   abbr: 'i',
   help: 'Default iterations of each bench to run',
-  default: 1000
+  default: 10000
 });
 cli.option('concurrency', {
   abbr: 'c',
   help: 'Default iterations of a bench to run at one time',
-  default: 1
+  default: 100
 });
 cli.option('delay', {
   abbr: 'd',
