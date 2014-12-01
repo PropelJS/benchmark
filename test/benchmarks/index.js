@@ -1,6 +1,6 @@
 'use strict';
 
-var gen = require('gen');
+let gen = require('gen');
 
 /* globals suite:false, bench:false */
 suite('main', function * main () {
@@ -9,17 +9,18 @@ suite('main', function * main () {
       yield gen.delay(100);
       timer.mark('ok');
       timer.mark('two');
-      timer.mark('3');
+      timer.mark('three');
       timer.mark('four');
       timer.mark('last');
     });
   }, {
     minOps: 1000
   });
+
   bench('bench', function * innerBench (timer) {
     timer.mark('ok');
     timer.mark('two');
-    timer.mark('3');
+    timer.mark('three');
     timer.mark('four');
     timer.mark('last');
   });
@@ -27,8 +28,9 @@ suite('main', function * main () {
   comp: 'bench',
   minOps: 1
 });
+
 suite('error', function * errorSuite () {
-  bench('error', function * errorBench(timer) {
+  bench('error', function * errorBench() {
     return true;
   }, {
     minOps: 1e9
@@ -36,4 +38,3 @@ suite('error', function * errorSuite () {
 }, {
   comp: 'any'
 });
-
