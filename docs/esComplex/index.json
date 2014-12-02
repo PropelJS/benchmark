@@ -1,26 +1,26 @@
 {
   "reports": [
     "gulpfile.js.json",
-    "lib/bench.js.json",
-    "lib/index.js.json",
-    "lib/loader.js.json",
-    "lib/reporter.js.json",
-    "lib/runner.js.json",
-    "lib/suite.js.json",
-    "reporters/clean.js.json",
-    "test/benchmarks/index.js.json",
-    "test/unit/bench.js.json",
-    "test/unit/index.js.json",
-    "test/unit/loader.js.json",
-    "test/unit/reporter.js.json",
-    "test/unit/runner.js.json",
-    "test/unit/suite.js.json"
+    "lib\bench.js.json",
+    "lib\index.js.json",
+    "lib\loader.js.json",
+    "lib\reporter.js.json",
+    "lib\runner.js.json",
+    "lib\suite.js.json",
+    "reporters\clean.js.json",
+    "test\benchmarks\index.js.json",
+    "test\unit\lib\bench.js.json",
+    "test\unit\lib\index.js.json",
+    "test\unit\lib\loader.js.json",
+    "test\unit\lib\reporter.js.json",
+    "test\unit\lib\runner.js.json",
+    "test\unit\lib\suite.js.json"
   ],
-  "baseDir": "/var/node/propel/benchmark/",
-  "cwd": "/var/node/propel/benchmark",
+  "baseDir": "c:\var\node\propel\benchmark\",
+  "cwd": "c:\var\node\propel\benchmark",
   "reporterName": "gulp-escomplex-reporter-json",
   "reporterVersion": "1.0.0",
   "analysis": "gulp-escomplex",
   "analysisVersion": "1.0.1",
-  "created": "2014-12-01T22:51:34.193Z"
+  "created": "2014-12-02T10:23:30.204Z"
 }

@@ -191,7 +191,9 @@
       </tr>
       <div class="description"><p>Sets up a new benchmark test runner</p> </div>
       <pre><code class="language-javascript"></code></pre>function benchmark(conf) {
-  let opts = handleDefaults(opts);
+  conf = conf || {};
+
+  let opts = handleDefaults(conf);
 
   opts.iterations = parseInt(opts.iterations);
   opts.concurrency = parseInt(opts.concurrency);
@@ -200,7 +202,7 @@
   opts.minTime = parseInt(opts.minTime);
   opts.timeOut = parseInt(opts.timeOut);
 
-  loader(opts);
+  return loader(opts);
 }
       <section id="handleDefaults">
         <h1>handleDefaults</h1>

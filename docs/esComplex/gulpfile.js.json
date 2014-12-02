@@ -19,7 +19,7 @@
         ]
       },
       "operands": {
-        "distinct": 22,
+        "distinct": 23,
         "total": 32,
         "identifiers": [
           "\"use strict\"",
@@ -38,21 +38,22 @@
           "watch",
           "\"lib/**/*.js\"",
           "statementsThreshold",
-          80,
-          "functionsThreshold",
-          "branchesThreshold",
           75,
+          "functionsThreshold",
+          70,
+          "branchesThreshold",
+          60,
           "linesThreshold",
           "\"gulp-module\""
         ]
       },
       "length": 49,
-      "vocabulary": 28,
-      "difficulty": 4.363636363636363,
-      "volume": 235.5603911808226,
-      "effort": 1027.8998887890439,
-      "bugs": 0.07852013039360753,
-      "time": 57.105549377169105
+      "vocabulary": 29,
+      "difficulty": 4.173913043478261,
+      "volume": 238.04106876125107,
+      "effort": 993.5627217860914,
+      "bugs": 0.07934702292041702,
+      "time": 55.19792898811619
     },
     "params": 0,
     "line": 1,
@@ -72,7 +73,7 @@
       "type": "CommonJS"
     }
   ],
-  "maintainability": 63.41255130194141,
+  "maintainability": 63.48050303130607,
   "params": 0,
   "meta": {
     "analysis": "gulp-escomplex",

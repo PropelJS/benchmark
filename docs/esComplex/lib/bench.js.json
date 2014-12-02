@@ -2,7 +2,7 @@
   "aggregate": {
     "sloc": {
       "logical": 145,
-      "physical": 251
+      "physical": 276
     },
     "cyclomatic": 12,
     "halstead": {
@@ -250,7 +250,7 @@
         "time": 80.02148439109725
       },
       "params": 1,
-      "line": 32,
+      "line": 39,
       "cyclomaticDensity": 16.666666666666664
     },
     {
@@ -302,7 +302,7 @@
         "time": 165.23063562761683
       },
       "params": 0,
-      "line": 45,
+      "line": 52,
       "cyclomaticDensity": 25
     },
     {
@@ -369,7 +369,7 @@
         "time": 318.585467385804
       },
       "params": 0,
-      "line": 75,
+      "line": 85,
       "cyclomaticDensity": 21.428571428571427
     },
     {
@@ -415,7 +415,7 @@
         "time": 33.31435556800403
       },
       "params": 0,
-      "line": 104,
+      "line": 114,
       "cyclomaticDensity": 20
     },
     {
@@ -458,7 +458,7 @@
         "time": 10.890803243858159
       },
       "params": 0,
-      "line": 110,
+      "line": 120,
       "cyclomaticDensity": 50
     },
     {
@@ -515,7 +515,7 @@
         "time": 130.02797331369229
       },
       "params": 1,
-      "line": 138,
+      "line": 154,
       "cyclomaticDensity": 11.11111111111111
     },
     {
@@ -566,7 +566,7 @@
         "time": 111.56173267629619
       },
       "params": 1,
-      "line": 149,
+      "line": 165,
       "cyclomaticDensity": 33.33333333333333
     },
     {
@@ -629,7 +629,7 @@
         "time": 364.8873282519725
       },
       "params": 0,
-      "line": 164,
+      "line": 183,
       "cyclomaticDensity": 12.5
     },
     {
@@ -696,7 +696,7 @@
         "time": 469.5266761665008
       },
       "params": 0,
-      "line": 191,
+      "line": 213,
       "cyclomaticDensity": 5.555555555555555
     },
     {
@@ -739,7 +739,7 @@
         "time": 11.300809954215172
       },
       "params": 1,
-      "line": 196,
+      "line": 218,
       "cyclomaticDensity": 50
     },
     {
@@ -784,7 +784,7 @@
         "time": 34.53743736931686
       },
       "params": 0,
-      "line": 223,
+      "line": 248,
       "cyclomaticDensity": 20
     },
     {
@@ -847,7 +847,7 @@
         "time": 271.403797873368
       },
       "params": 1,
-      "line": 228,
+      "line": 253,
       "cyclomaticDensity": 7.6923076923076925
     }
   ],
@@ -878,6 +878,6 @@
   "meta": {
     "analysis": "gulp-escomplex",
     "analysisVersion": "1.0.1",
-    "fileName": "lib/bench.js"
+    "fileName": "lib\bench.js"
   }
 }

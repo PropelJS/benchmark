@@ -20,7 +20,7 @@ describe('reporter', function() {
 
   it('should error on invalid reporters', function * () {
     try {
-      let reporter = new Reporter('xyz');
+      new Reporter('xyz');
     } catch (err) {
       err.should.be.type('object');
     }

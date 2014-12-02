@@ -119,6 +119,6 @@
   "meta": {
     "analysis": "gulp-escomplex",
     "analysisVersion": "1.0.1",
-    "fileName": "lib/reporter.js"
+    "fileName": "lib\reporter.js"
   }
 }

@@ -1,14 +1,14 @@
 {
   "aggregate": {
     "sloc": {
-      "logical": 130,
-      "physical": 241
+      "logical": 132,
+      "physical": 256
     },
     "cyclomatic": 15,
     "halstead": {
       "operators": {
-        "distinct": 19,
-        "total": 343,
+        "distinct": 20,
+        "total": 345,
         "identifiers": [
           "let",
           "=",
@@ -19,6 +19,7 @@
           "new",
           "{}",
           "||",
+          "return",
           "if",
           "else",
           "===",
@@ -33,7 +34,7 @@
       },
       "operands": {
         "distinct": 71,
-        "total": 408,
+        "total": 410,
         "identifiers": [
           "\"use strict\"",
           "Bench",
@@ -108,17 +109,17 @@
           "exports"
         ]
       },
-      "length": 751,
-      "vocabulary": 90,
-      "difficulty": 54.59154929577465,
-      "volume": 4875.381675343586,
-      "effort": 266154.63906523574,
-      "bugs": 1.6251272251145286,
-      "time": 14786.368836957541
+      "length": 755,
+      "vocabulary": 91,
+      "difficulty": 57.74647887323944,
+      "volume": 4913.384953350016,
+      "effort": 283730.68040471926,
+      "bugs": 1.6377949844500053,
+      "time": 15762.81557803996
     },
     "params": 17,
     "line": 1,
-    "cyclomaticDensity": 11.538461538461538
+    "cyclomaticDensity": 11.363636363636363
   },
   "functions": [
     {
@@ -181,24 +182,25 @@
     {
       "name": "normalizeOpts",
       "sloc": {
-        "logical": 6,
-        "physical": 8
+        "logical": 7,
+        "physical": 9
       },
       "cyclomatic": 1,
       "halstead": {
         "operators": {
-          "distinct": 4,
-          "total": 23,
+          "distinct": 5,
+          "total": 24,
           "identifiers": [
             "=",
             "||",
             "{}",
-            "."
+            ".",
+            "return"
           ]
         },
         "operands": {
           "distinct": 8,
-          "total": 29,
+          "total": 30,
           "identifiers": [
             "opts",
             "<anonymous>",
@@ -210,17 +212,17 @@
             "afterEach"
           ]
         },
-        "length": 52,
-        "vocabulary": 12,
-        "difficulty": 7.25,
-        "volume": 186.41805003750014,
-        "effort": 1351.530862771876,
-        "bugs": 0.062139350012500046,
-        "time": 75.08504793177089
+        "length": 54,
+        "vocabulary": 13,
+        "difficulty": 9.375,
+        "volume": 199.82374477961898,
+        "effort": 1873.347607308928,
+        "bugs": 0.06660791492653965,
+        "time": 104.07486707271822
       },
       "params": 1,
-      "line": 35,
-      "cyclomaticDensity": 16.666666666666664
+      "line": 41,
+      "cyclomaticDensity": 14.285714285714285
     },
     {
       "name": "addSuite",
@@ -264,7 +266,7 @@
         "time": 15.868205041334196
       },
       "params": 3,
-      "line": 51,
+      "line": 58,
       "cyclomaticDensity": 50
     },
     {
@@ -314,30 +316,31 @@
         "time": 71.35205002467957
       },
       "params": 3,
-      "line": 63,
+      "line": 70,
       "cyclomaticDensity": 40
     },
     {
       "name": "run",
       "sloc": {
-        "logical": 14,
-        "physical": 27
+        "logical": 15,
+        "physical": 29
       },
       "cyclomatic": 4,
       "halstead": {
         "operators": {
-          "distinct": 4,
-          "total": 15,
+          "distinct": 5,
+          "total": 16,
           "identifiers": [
             "let",
             "=",
             ".",
-            "if"
+            "if",
+            "return"
           ]
         },
         "operands": {
           "distinct": 8,
-          "total": 18,
+          "total": 19,
           "identifiers": [
             "runner",
             "previous",
@@ -349,17 +352,17 @@
             "after"
           ]
         },
-        "length": 33,
-        "vocabulary": 12,
-        "difficulty": 4.5,
-        "volume": 118.30376252379817,
-        "effort": 532.3669313570917,
-        "bugs": 0.039434587507932724,
-        "time": 29.575940630949543
+        "length": 35,
+        "vocabulary": 13,
+        "difficulty": 5.9375,
+        "volume": 129.51539013493823,
+        "effort": 768.9976289261957,
+        "bugs": 0.043171796711646074,
+        "time": 42.722090495899764
       },
       "params": 1,
-      "line": 77,
-      "cyclomaticDensity": 28.57142857142857
+      "line": 84,
+      "cyclomaticDensity": 26.666666666666668
     },
     {
       "name": "handleSuites",
@@ -405,7 +408,7 @@
         "time": 71.55397776031157
       },
       "params": 1,
-      "line": 108,
+      "line": 117,
       "cyclomaticDensity": 22.22222222222222
     },
     {
@@ -449,7 +452,7 @@
         "time": 33.658814590104186
       },
       "params": 0,
-      "line": 124,
+      "line": 133,
       "cyclomaticDensity": 25
     },
     {
@@ -495,7 +498,7 @@
         "time": 61.869517483436056
       },
       "params": 0,
-      "line": 139,
+      "line": 148,
       "cyclomaticDensity": 50
     },
     {
@@ -533,7 +536,7 @@
         "time": 1.43609027817842
       },
       "params": 1,
-      "line": 145,
+      "line": 154,
       "cyclomaticDensity": 100
     },
     {
@@ -579,7 +582,7 @@
         "time": 61.869517483436056
       },
       "params": 0,
-      "line": 158,
+      "line": 167,
       "cyclomaticDensity": 50
     },
     {
@@ -617,7 +620,7 @@
         "time": 1.43609027817842
       },
       "params": 1,
-      "line": 168,
+      "line": 177,
       "cyclomaticDensity": 100
     },
     {
@@ -682,7 +685,7 @@
         "time": 387.54398554324547
       },
       "params": 0,
-      "line": 174,
+      "line": 186,
       "cyclomaticDensity": 10.526315789473683
     },
     {
@@ -732,7 +735,7 @@
         "time": 91.15028368537361
       },
       "params": 0,
-      "line": 202,
+      "line": 217,
       "cyclomaticDensity": 7.6923076923076925
     },
     {
@@ -780,7 +783,7 @@
         "time": 106
       },
       "params": 1,
-      "line": 214,
+      "line": 229,
       "cyclomaticDensity": 44.44444444444444
     },
     {
@@ -819,7 +822,7 @@
         "time": 3.509193652572005
       },
       "params": 1,
-      "line": 231,
+      "line": 246,
       "cyclomaticDensity": 100
     }
   ],
@@ -840,11 +843,11 @@
       "type": "CommonJS"
     }
   ],
-  "maintainability": 66.11001348832679,
+  "maintainability": 65.87765425155712,
   "params": 1.1333333333333333,
   "meta": {
     "analysis": "gulp-escomplex",
     "analysisVersion": "1.0.1",
-    "fileName": "lib/suite.js"
+    "fileName": "lib\suite.js"
   }
 }

@@ -301,6 +301,6 @@
   "meta": {
     "analysis": "gulp-escomplex",
     "analysisVersion": "1.0.1",
-    "fileName": "lib/loader.js"
+    "fileName": "lib\loader.js"
   }
 }

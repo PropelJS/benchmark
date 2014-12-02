@@ -1,7 +1,5 @@
 'use strict';
 
-let gen = require('gen');
-
 /* globals suite:false, bench:false */
 suite('main', function * main () {
   suite('nested', function * nested () {

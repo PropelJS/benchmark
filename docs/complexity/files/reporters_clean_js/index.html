@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Plato - reporters/clean.js</title>
+  <title>Plato - reporters\clean.js</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -36,7 +36,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>reporters/clean.js</h1>
+    <h1>reporters\clean.js</h1>
   </div>
 </div>
 
@@ -48,7 +48,7 @@
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">178</p>
+      <p class="stat">239</p>
     </div>
   </div>
   <div class="row historical">
@@ -100,9 +100,20 @@ if (process.platform === &#039;win32&#039;) {
   err = &#039;\u00D7&#039;;
 }
 
+/**
+ * Creates a new clean reporter
+ *
+ * @constructor
+ */
 function Clean() {
 }
 
+/**
+ * Handles the initial output logic for a suite
+ *
+ * @param {Suite} suite - the suite to output
+ * @param {integer} level - the indentation level of the suite
+ */
 Clean.prototype.output = function output(suite, level) {
   if (!level) {
     level = 2;
@@ -117,6 +128,12 @@ Clean.prototype.output = function output(suite, level) {
   }
 };
 
+/**
+ * Outputs the data for an individual suite
+ *
+ * @param {Suite} suite - The suite to output data for
+ * @param {Integer} level - The output padding level
+ */
 Clean.prototype.outputSuite = function outputSuite(suite, level) {
   let suiteTime = this.formatTime(suite.elapsed);
 
@@ -154,6 +171,12 @@ Clean.prototype.outputSuite = function outputSuite(suite, level) {
   }
 };
 
+/**
+ * Outputs the data for a bench
+ *
+ * @param {Bench} bench - The bench to output data for
+ * @param {Integer} level - The output padding level
+ */
 Clean.prototype.outputBench = function outputBench(bench, level) {
   let str = this.addPadding(level);
   let color = chalk.gray;
@@ -192,6 +215,12 @@ Clean.prototype.outputBench = function outputBench(bench, level) {
   }
 };
 
+/**
+ * Outputs the bench data relating to comparative suites
+ *
+ * @param {Bench} bench - the bench to output the data for
+ * @param {Integer} level - the output padding level
+ */
 Clean.prototype.handleBenchComp = function handleBenchComp(bench, level) {
   let timesFaster = bench.percentOps - 1;
   let adjective = &#039;Faster&#039;;
@@ -205,6 +234,13 @@ Clean.prototype.handleBenchComp = function handleBenchComp(bench, level) {
   this.outputData(fasterTitle, timesFaster.toFixed(2), level);
 };
 
+/**
+ * Default data output and formatting
+ *
+ * @param {String} title - the title of the data being output
+ * @param {String} value - the value associated with the title
+ * @param {Integer} level - the output padding level
+ */
 Clean.prototype.outputData = function outputData(title, value, level) {
   let string = this.addPadding(level);
   string += &#039;  - &#039; + title + &#039;: &#039;;
@@ -212,6 +248,12 @@ Clean.prototype.outputData = function outputData(title, value, level) {
   console.log(chalk.white(string));
 };
 
+/**
+ * Outputs the data for a benches marks
+ *
+ * @param {Object} marks - the object containing the mark data
+ * @param {Integer} level - the output padding level
+ */
 Clean.prototype.outputMarks = function outputMarks(marks, level) {
   let keys = Object.keys(marks);
   if (keys.length &gt; 1) {
@@ -222,6 +264,13 @@ Clean.prototype.outputMarks = function outputMarks(marks, level) {
   }
 };
 
+/**
+ * Outputs the data for a single mark
+ *
+ * @param {Object} mark - the mark to output the data for
+ * @param {String} name - the name of the mark to output data for
+ * @param {Integer} level - the output padding level
+ */
 Clean.prototype.outputMark = function outputMark(mark, name, level) {
   let str = this.addPadding(level);
   str += &#039;Mark: &#039; + name;
@@ -237,6 +286,12 @@ Clean.prototype.outputMark = function outputMark(mark, name, level) {
   this.outputData(&#039;Margin of Error&#039;, moePercent + &#039;%&#039;, level);
 };
 
+/**
+ * Adds appropriate padding to the output
+ *
+ * @param {Integer} level - how much padding to add
+ * @returns {string} - the string representing the padding
+ */
 Clean.prototype.addPadding = function addPadding(level) {
   let str = &#039;&#039;;
   for (let i = 0; i &lt; level; i++) {
@@ -246,6 +301,12 @@ Clean.prototype.addPadding = function addPadding(level) {
   return str;
 };
 
+/**
+ * Formats a time into an output appropriate value
+ *
+ * @param {Integer} val - the time in nanoseconds
+ * @returns {string} - the formatted time string
+ */
 Clean.prototype.formatTime = function formatTime(val) {
   let unit = &#039;ns&#039;;
 

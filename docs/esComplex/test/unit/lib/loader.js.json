@@ -1,0 +1,268 @@
+{
+  "aggregate": {
+    "sloc": {
+      "logical": 14,
+      "physical": 52
+    },
+    "cyclomatic": 1,
+    "halstead": {
+      "operators": {
+        "distinct": 5,
+        "total": 22,
+        "identifiers": [
+          "()",
+          "let",
+          "=",
+          "function",
+          "."
+        ]
+      },
+      "operands": {
+        "distinct": 21,
+        "total": 34,
+        "identifiers": [
+          "\"use strict\"",
+          "\"should\"",
+          "require",
+          "\"co-mocha\"",
+          "loader",
+          "\"../../../lib/loader\"",
+          "path",
+          "\"path\"",
+          "\"loader\"",
+          "<anonymous>",
+          "\"should return a function\"",
+          "\"function\"",
+          "should",
+          "be",
+          "type",
+          "it",
+          "\"should handle directories\"",
+          "done",
+          "\"should handle single files\"",
+          "\"should throw an error if no files are found\"",
+          "describe"
+        ]
+      },
+      "length": 56,
+      "vocabulary": 26,
+      "difficulty": 4.0476190476190474,
+      "volume": 263.2246242159012,
+      "effort": 1065.4330027786477,
+      "bugs": 0.0877415414053004,
+      "time": 59.19072237659154
+    },
+    "params": 3,
+    "line": 1,
+    "cyclomaticDensity": 7.142857142857142
+  },
+  "functions": [
+    {
+      "name": "<anonymous>",
+      "sloc": {
+        "logical": 4,
+        "physical": 42
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 8,
+          "identifiers": [
+            "()",
+            "function"
+          ]
+        },
+        "operands": {
+          "distinct": 6,
+          "total": 12,
+          "identifiers": [
+            "\"should return a function\"",
+            "<anonymous>",
+            "it",
+            "\"should handle directories\"",
+            "\"should handle single files\"",
+            "\"should throw an error if no files are found\""
+          ]
+        },
+        "length": 20,
+        "vocabulary": 8,
+        "difficulty": 2,
+        "volume": 60,
+        "effort": 120,
+        "bugs": 0.02,
+        "time": 6.666666666666667
+      },
+      "params": 0,
+      "line": 11,
+      "cyclomaticDensity": 25
+    },
+    {
+      "name": "<anonymous>",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 4,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 5,
+          "total": 5,
+          "identifiers": [
+            "\"function\"",
+            "loader",
+            "should",
+            "be",
+            "type"
+          ]
+        },
+        "length": 9,
+        "vocabulary": 7,
+        "difficulty": 1,
+        "volume": 25.26619429851844,
+        "effort": 25.26619429851844,
+        "bugs": 0.008422064766172813,
+        "time": 1.403677461028802
+      },
+      "params": 0,
+      "line": 12,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "<anonymous>",
+      "sloc": {
+        "logical": 1,
+        "physical": 11
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 0,
+          "total": 0,
+          "identifiers": [
+          ]
+        },
+        "operands": {
+          "distinct": 1,
+          "total": 1,
+          "identifiers": [
+            "done"
+          ]
+        },
+        "length": 1,
+        "vocabulary": 1,
+        "difficulty": 0,
+        "volume": 0,
+        "effort": 0,
+        "bugs": 0,
+        "time": 0
+      },
+      "params": 1,
+      "line": 16,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "<anonymous>",
+      "sloc": {
+        "logical": 1,
+        "physical": 11
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 0,
+          "total": 0,
+          "identifiers": [
+          ]
+        },
+        "operands": {
+          "distinct": 1,
+          "total": 1,
+          "identifiers": [
+            "done"
+          ]
+        },
+        "length": 1,
+        "vocabulary": 1,
+        "difficulty": 0,
+        "volume": 0,
+        "effort": 0,
+        "bugs": 0,
+        "time": 0
+      },
+      "params": 1,
+      "line": 28,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "<anonymous>",
+      "sloc": {
+        "logical": 1,
+        "physical": 11
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 0,
+          "total": 0,
+          "identifiers": [
+          ]
+        },
+        "operands": {
+          "distinct": 1,
+          "total": 1,
+          "identifiers": [
+            "done"
+          ]
+        },
+        "length": 1,
+        "vocabulary": 1,
+        "difficulty": 0,
+        "volume": 0,
+        "effort": 0,
+        "bugs": 0,
+        "time": 0
+      },
+      "params": 1,
+      "line": 41,
+      "cyclomaticDensity": 100
+    }
+  ],
+  "dependencies": [
+    {
+      "line": 5,
+      "path": "should",
+      "type": "CommonJS"
+    },
+    {
+      "line": 6,
+      "path": "co-mocha",
+      "type": "CommonJS"
+    },
+    {
+      "line": 8,
+      "path": "../../../lib/loader",
+      "type": "CommonJS"
+    },
+    {
+      "line": 9,
+      "path": "path",
+      "type": "CommonJS"
+    }
+  ],
+  "maintainability": 88.80907409938091,
+  "params": 0.6,
+  "meta": {
+    "analysis": "gulp-escomplex",
+    "analysisVersion": "1.0.1",
+    "fileName": "test\unit\lib\loader.js"
+  }
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Plato - lib/bench.js</title>
+  <title>Plato - lib\bench.js</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -36,7 +36,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>lib/bench.js</h1>
+    <h1>lib\bench.js</h1>
   </div>
 </div>
 
@@ -48,7 +48,7 @@
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">251</p>
+      <p class="stat">276</p>
     </div>
   </div>
   <div class="row historical">
@@ -120,6 +120,13 @@ function Bench(suite, name, fn, opts) {
   this.opts = extend(parentOpts, opts);
 }
 
+/**
+ * Normalizes the options passed in to the constructor
+ *
+ * @param {Object} opts - The constructor options
+ * @returns {*|{}}
+ * @private
+ */
 Bench.prototype.normalizeOpts = function normalizeOpts(opts) {
   opts = opts || {};
   opts.before = opts.before || false;
@@ -131,7 +138,7 @@ Bench.prototype.normalizeOpts = function normalizeOpts(opts) {
 };
 
 /**
- * Runs the given benchmark for the needed number of iterations
+ * Runs the given benchmark
  */
 Bench.prototype.run = function * run() {
   let opts = this.opts;
@@ -163,6 +170,9 @@ Bench.prototype.run = function * run() {
   this.calculateData();
 };
 
+/**
+ * Runs the total number of iterations for the current benchmark
+ */
 Bench.prototype.runIterations = function * runIterations() {
   let opts = this.opts;
   let timePassed = 0;
@@ -226,6 +236,12 @@ Bench.prototype.execute = function execute() {
   })();
 };
 
+/**
+ * Calculates the timer for a single benchmark run
+ *
+ * @param {Timer} timer - The timer to calculate
+ * @returns {number} executionTime - The total execution time tracked by the timer
+ */
 Bench.prototype.calculateTimer = function calculateTimer(timer) {
   let obj = this.marks;
   let marksLength = timer._marks.length;
@@ -252,6 +268,9 @@ Bench.prototype.calculateTimer = function calculateTimer(timer) {
   return executionTime;
 };
 
+/**
+ * Calculates the data for this benchmark
+ */
 Bench.prototype.calculateData = function calculateData() {
   this.totalRuns = this.runs.length;
 
@@ -279,6 +298,9 @@ Bench.prototype.calculateData = function calculateData() {
   delete this.opts;
 };
 
+/**
+ * Calculates the data for the runs of this benchmark
+ */
 Bench.prototype.calculateRuns = function calculateRuns() {
   let times = [];
   let length = this.runs.length;
@@ -311,6 +333,9 @@ Bench.prototype.calculateRuns = function calculateRuns() {
   this.totalRuns = length;
 };
 
+/**
+ * Calculates the marks for the benchmark
+ */
 Bench.prototype.calculateMarks = function calculateMarks() {
   let marks = this.marks;
   let keys = Object.keys(marks);

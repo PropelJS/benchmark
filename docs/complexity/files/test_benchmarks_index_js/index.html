@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Plato - test/benchmarks/index.js</title>
+  <title>Plato - test\benchmarks\index.js</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -36,7 +36,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>test/benchmarks/index.js</h1>
+    <h1>test\benchmarks\index.js</h1>
   </div>
 </div>
 
@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">80.50</p>
+      <p class="stat">88.06</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">40</p>
+      <p class="stat">29</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">8.63</p>
+      <p class="stat">6.57</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">0.20</p>
+      <p class="stat">0.13</p>
     </div>
   </div>
 </div>
@@ -97,34 +97,23 @@ let gen = require(&#039;gen&#039;);
 suite(&#039;main&#039;, function * main () {
   suite(&#039;nested&#039;, function * nested () {
     bench(&#039;delay&#039;, function * delayed (timer) {
-      yield gen.delay(100);
       timer.mark(&#039;ok&#039;);
-      timer.mark(&#039;two&#039;);
-      timer.mark(&#039;three&#039;);
-      timer.mark(&#039;four&#039;);
-      timer.mark(&#039;last&#039;);
     });
-  }, {
-    minOps: 1000
   });
 
   bench(&#039;bench&#039;, function * innerBench (timer) {
-    timer.mark(&#039;ok&#039;);
     timer.mark(&#039;two&#039;);
     timer.mark(&#039;three&#039;);
     timer.mark(&#039;four&#039;);
     timer.mark(&#039;last&#039;);
   });
 }, {
-  comp: &#039;bench&#039;,
-  minOps: 1
+  comp: &#039;bench&#039;
 });
 
 suite(&#039;error&#039;, function * errorSuite () {
   bench(&#039;error&#039;, function * errorBench() {
     return true;
-  }, {
-    minOps: 1e9
   });
 }, {
   comp: &#039;any&#039;

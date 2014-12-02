@@ -299,6 +299,6 @@
   "meta": {
     "analysis": "gulp-escomplex",
     "analysisVersion": "1.0.1",
-    "fileName": "lib/runner.js"
+    "fileName": "lib\runner.js"
   }
 }
