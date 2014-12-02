@@ -13,22 +13,25 @@ describe('benchmark', function() {
     benchmark.should.be.type('function');
   });
 
-  it('should return the results', function * () {
+  it('should return the results', function * (done) {
     yield benchmark({
       path: path.resolve(__dirname, '../../benchmarks'),
       iterations: 2,
       concurrency: 2,
       minTime: 1
-    }).then(function(res) {
-      return true;
+    }).then(function(result) {
+      result.should.be.type('object');
+      done();
+    }, function(error) {
+      console.log(error);
     });
   });
 
-  it('should have default options', function * () {
-    yield benchmark().then(function(res){
+  it('should have default options', function * (done) {
+    yield benchmark().then(function(res) {
       throw new Error('Should not make it here');
     }, function(err) {
-      return true;
+      done();
     });
   });
 });

@@ -6,10 +6,10 @@ var config = {
   root: __dirname,
   src: ['**/*.js', '!node_modules/**', '!docs/**', '!bin/**'],
   watch: ['lib/**/*.js', '!node_modules/**', '!docs/**', '!bin/**'],
-  statementsThreshold: 80,
-  functionsThreshold: 80,
-  branchesThreshold: 80,
-  linesThreshold: 80
+  statementsThreshold: 75,
+  functionsThreshold: 70,
+  branchesThreshold: 60,
+  linesThreshold: 70
 };
 
 require('gulp-module')(gulp, config);

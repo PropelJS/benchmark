@@ -6,17 +6,11 @@ let gen = require('gen');
 suite('main', function * main () {
   suite('nested', function * nested () {
     bench('delay', function * delayed (timer) {
-      yield gen.delay(100);
       timer.mark('ok');
-      timer.mark('two');
-      timer.mark('three');
-      timer.mark('four');
-      timer.mark('last');
     });
   });
 
   bench('bench', function * innerBench (timer) {
-    timer.mark('ok');
     timer.mark('two');
     timer.mark('three');
     timer.mark('four');

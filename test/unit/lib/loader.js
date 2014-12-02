@@ -13,29 +13,40 @@ describe('loader', function() {
     loader.should.be.type('function');
   });
 
-  it('should handle directories', function * () {
-    loader({
-      'path': path.resolve(__dirname, '../../benchmarks'),
-      'reporter': 'clean'
+  it('should handle directories', function * (done) {
+    yield loader({
+      path: path.resolve(__dirname, '../../benchmarks'),
+      reporter: 'clean'
     }).then(function(result) {
       result.should.be.type('object');
+      done();
     }, function(err) {
       throw err;
     });
   });
 
-  it('should handle single files', function * () {
-    loader({
-      'path': path.resolve(__dirname, '../../benchmarks/index.js'),
-      'reporter': 'clean'
+  it('should handle single files', function * (done) {
+    yield loader({
+      path: path.resolve(__dirname, '../../benchmarks/index.js'),
+      reporter: 'clean'
     }).then(function(result) {
       result.should.be.type('object');
+      done();
     }, function(err) {
       throw err;
     });
   });
 
   // it should throw an error if no files are found
-
-  // it should return results
+  it('should throw an error if no files are found', function * (done) {
+    yield loader({
+      path: path.resolve(__dirname, '../../empty'),
+      reporter: 'clean'
+    }).then(function(result) {
+      throw new Error('It should not make it here');
+    }, function(error) {
+      error.should.be.type('object');
+      done();
+    });
+  });
 });
