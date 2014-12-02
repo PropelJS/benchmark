@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Plato - lib\loader.js</title>
+  <title>Plato - lib/loader.js</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -36,7 +36,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>lib\loader.js</h1>
+    <h1>lib/loader.js</h1>
   </div>
 </div>
 
@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">65.18</p>
+      <p class="stat">73.42</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">66</p>
+      <p class="stat">71</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">15.38</p>
+      <p class="stat">11.67</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">0.30</p>
+      <p class="stat">0.25</p>
     </div>
   </div>
 </div>
@@ -91,68 +91,73 @@
   <div class="row">
     <textarea id="file-source" class="col-md-12">&#039;use strict&#039;;
 
-var fsp = require(&#039;co-fs-plus&#039;);
-var fs = require(&#039;co-fs&#039;);
-var path = require(&#039;path&#039;);
-var gen = require(&#039;gen&#039;);
-var run = gen.run;
-var Runner = require(&#039;./runner&#039;);
-var Reporter = require(&#039;./reporter&#039;);
+let gen = require(&#039;gen&#039;);
+let run = gen.run;
+let fs = require(&#039;fs&#039;);
+let path = require(&#039;path&#039;);
+let fsp = require(&#039;co-fs-plus&#039;);
+let Runner = require(&#039;./runner&#039;);
 
+/**
+ * Runs the loader generator function
+ *
+ * @param {Object} opts - The options for the runner
+ * @param {Function||null} cb - Optional Callback
+ * @return {Object} results - Returns the results either through the callback or as a promise
+ */
 function loader(opts, cb) {
-  return run(function * loader() {
-    var fileStats = yield gen.resume(fs.stat)(opts.path);
-
-    var runner = new Runner(opts);
-    runner.setup();
-
-    if (fileStats.isFile()) {
-      yield runner.loadFiles(path.resolve(&#039;./&#039;, opts.path));
-    } else {
-      // get each filename into an array
-      var files = yield fsp.walk(opts.path, {
-        followSymlinks: true,
-        filterFilename: this._filterFileNames
-      });
-
-      // if there are no files throw an error
-      if (files.length === 0) {
-        throw new Error(&#039;No test files found in &#039; + opts.path);
-      }
-
-      // run the tests for each file found
-      var i = 0;
-      while (i &lt; files.length) {
-        yield runner.loadFiles(path.resolve(&#039;./&#039;, files[i]));
-        i++;
-      }
-
-      // run the suites
-      yield runner.run();
-
-      // get the results as an Object
-      var results = yield runner.results();
-
-      // Output the results if needed
-      if (opts.cli &amp;&amp; !opts.silent) {
-        var reporter = new Reporter(opts.reporter);
-        yield reporter.output(opts.reporter);
-      }
-
-      return results;
-    }
-  })(cb);
+  return run(loaderGen)(opts, cb);
 }
 
-Runner.prototype._filterFileNames = function _filterFileNames(filename) {
-  var ext = path.extname(filename);
+/**
+ * Loads the benchmark files and handles the overall control flow
+ *
+ * @param {Object} opts - The options for the runner
+= * @return {Object} results - Returns the results
+ */
+function * loaderGen(opts) {
+  let fileStats = yield gen.resume(fs.stat)(opts.path);
 
-  if (ext === &#039;.js&#039;) {
-    return true;
+  let runner = new Runner(opts);
+  runner.setup();
+
+  let files = [];
+
+  if (fileStats.isFile()) {
+    files.push(opts.path);
+  } else {
+    // get each filename into an array
+    files = yield fsp.walk(opts.path, {
+      followSymlinks: true, filterFilename: filterFileNames
+    });
   }
 
-  return false;
-};
+  // if there are no files throw an error
+  if (files.length === 0) {
+    throw new Error(&#039;No test files found in &#039; + opts.path);
+  }
+
+  // require each file to setup the benchmarks
+  files.forEach(function(file) {
+    require(path.resolve(&#039;./&#039;, file));
+  });
+
+  // run the suites
+  return yield runner.run();
+}
+
+/**
+ * Filters files to only include .js files
+ *
+ * @param {String} filename - the name of the file to test
+ * @return {boolean} - Whether the file should be included or not
+ * @private
+ */
+function filterFileNames(filename) {
+  let ext = path.extname(filename);
+
+  return ext === &#039;.js&#039;;
+}
 
 module.exports = loader;</textarea>
   </div>

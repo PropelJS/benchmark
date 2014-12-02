@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Plato - lib\bench.js</title>
+  <title>Plato - lib/bench.js</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -36,7 +36,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>lib\bench.js</h1>
+    <h1>lib/bench.js</h1>
   </div>
 </div>
 
@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">67.75</p>
+      <p class="stat">62.09</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">82</p>
+      <p class="stat">251</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">26.25</p>
+      <p class="stat">57.98</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">0.46</p>
+      <p class="stat">2.19</p>
     </div>
   </div>
 </div>
@@ -91,83 +91,252 @@
   <div class="row">
     <textarea id="file-source" class="col-md-12">&#039;use strict&#039;;
 
-var extend = require(&#039;util&#039;)._extend;
-var gen = require(&#039;gen&#039;);
+let extend = require(&#039;util&#039;)._extend;
+let gen = require(&#039;gen&#039;);
+let Timer = require(&#039;Timer&#039;);
+let Stats = require(&#039;fast-stats&#039;).Stats;
 
+/**
+ * Creates a new Bench object
+ *
+ * @param {Object} suite - The suite this benchmark belongs to
+ * @param {String} name - The name of the benchmark
+ * @param {Function} fn - The benchmark Function
+ * @param {Object} opts - The options for the benchmark
+ * @constructor
+ */
 function Bench(suite, name, fn, opts) {
-  if (!opts) {
-    opts = {};
-  }
   this.suite = suite;
   this.name = name;
   this.fn = fn;
-  this.opts = extend({}, this.suite.opts);
-  if (this.opts.before) {
-    delete this.opts.before;
-  }
-  if (this.opts.after) {
-    delete this.opts.after;
-  }
-  this.overrides = opts;
+  this.timer = new Timer();
+  this.runs = [];
+  this.marks = {};
+  this.markData = {};
+
+  opts = this.normalizeOpts(opts);
+
+  let parentOpts = extend({}, this.suite.opts);
+  this.opts = extend(parentOpts, opts);
 }
 
-Bench.prototype.run = function * run() {
-  this.opts = extend(this.opts, this.overrides);
-  var opts = this.opts;
+Bench.prototype.normalizeOpts = function normalizeOpts(opts) {
+  opts = opts || {};
+  opts.before = opts.before || false;
+  opts.after = opts.after || false;
+  opts.beforeEach = opts.beforeEach || false;
+  opts.afterEach = opts.afterEach || false;
 
-  var parent = this.suite.currentObject;
-  this.suite.currentObject = this;
-
-  if (this.fn) {
-    var i = 1;
-    while (i &lt;= opts.iterations) {
-      yield this.execute(this.fn, opts, this.suite);
-      i += opts.concurrency;
-    }
-  }
-
-  this.suite.currentObject = parent;
+  return opts;
 };
 
-Bench.prototype.execute = function * execute(fn, opts, suite) {
-  if (suite.beforeEach) {
-    yield this.runBeforeEach();
+/**
+ * Runs the given benchmark for the needed number of iterations
+ */
+Bench.prototype.run = function * run() {
+  let opts = this.opts;
+
+  this.timer.start();
+
+  let previous = this.suite.currentObject;
+  this.suite.currentObject = this;
+
+  if (!this.fn) {
+    this.suite.currentObject = parent;
+    this.timer.stop();
+    return;
   }
 
   if (opts.before) {
     yield opts.before();
   }
 
-  yield gen.delay(opts.delay);
-  yield fn();
+  yield this.runIterations();
 
   if (opts.after) {
     yield opts.after();
   }
 
-  if (suite.afterEach) {
-   yield this.runAfterEach();
+  this.suite.currentObject = previous;
+  this.timer.stop();
+
+  this.calculateData();
+};
+
+Bench.prototype.runIterations = function * runIterations() {
+  let opts = this.opts;
+  let timePassed = 0;
+
+  let i = 0;
+
+  while (i &lt; opts.iterations || timePassed &lt; opts.minTime) {
+    // get the current time difference
+    let currentElapsed = process.hrtime(this.timer._marks[0].time);
+    timePassed = currentElapsed[0] * 1e9 + currentElapsed[1];
+    timePassed /= 1e6;
+
+    let yieldArray = [];
+    let j = 0;
+
+    while ((j &lt; opts.concurrency)) {
+      yieldArray.push(this.execute());
+      j++;
+    }
+
+    yield yieldArray;
+
+    i += opts.concurrency;
   }
 };
 
-Bench.prototype.runBeforeEach = function * runBeforeEach(suite) {
-  var i = 0;
-  while (i &lt; suite.beforeEach.length) {
-    yield suite.beforeEach[i]();
-    i++;
-  }
+/**
+ * Executes a single concurrent run of the benchmark
+ */
+Bench.prototype.execute = function execute() {
+  let fn = this.fn;
+  let opts = this.opts;
+  let runs = this.runs;
+  let _this = this;
+
+  return gen.run(function * executeBench() {
+    if (opts.delay) {
+      yield gen.delay(opts.delay);
+    }
+
+    let timer = new Timer();
+
+    if (opts.beforeEach) {
+      yield opts.beforeEach();
+    }
+
+    yield gen.run(function * () {
+      timer.start();
+      let res = yield * fn(timer);
+      timer.stop();
+      return res;
+    })().timeout(opts.timeOut).then(function() {
+      runs.push(_this.calculateTimer(timer));
+    }, function (e) {
+      runs.push({error: e});
+    });
+
+    if (opts.afterEach) {
+      yield opts.afterEach();
+    }
+  })();
 };
 
-Bench.prototype.runAfterEach = function * runAfterEach(suite) {
-  var i = 0;
-  while (i &lt; suite.afterEach.length) {
-    yield suite.afterEach[i]();
-    i++;
-  }
+Bench.prototype.calculateTimer = function calculateTimer(timer) {
+  let obj = this.marks;
+  let marksLength = timer._marks.length;
+
+  let start = timer.toNano(timer._marks[0].time);
+  let stop = timer.toNano(timer._marks[marksLength - 1].time);
+  let executionTime = stop - start;
+
+  let marks = timer._marks;
+  let startMark = marks.shift();
+
+  marks.forEach(function(mark) {
+    let startTime = timer.toNano(startMark.time);
+    let endTime = timer.toNano(mark.time);
+    startMark = mark;
+
+    if (!obj[mark.name]) {
+      obj[mark.name] = [];
+    }
+
+    obj[mark.name].push(endTime - startTime);
+  });
+
+  return executionTime;
 };
 
-Bench.prototype.set = function set(name, value) {
-  this.opts[name] = value;
+Bench.prototype.calculateData = function calculateData() {
+  this.totalRuns = this.runs.length;
+
+  let marksLength = this.timer._marks.length;
+
+  let start = this.timer.toNano(this.timer._marks[0].time);
+  let stop = this.timer.toNano(this.timer._marks[marksLength - 1].time);
+  this.elapsed = stop - start;
+
+  this.minOps = this.opts.minOps;
+
+  this.calculateRuns();
+  this.calculateMarks();
+
+  this.success = null;
+  if (this.minOps) {
+
+    this.success = this.ops &gt;= this.minOps;
+  }
+
+  delete this.suite;
+  delete this.fn;
+  delete this.timer;
+  delete this.runs;
+  delete this.opts;
+};
+
+Bench.prototype.calculateRuns = function calculateRuns() {
+  let times = [];
+  let length = this.runs.length;
+  let errorCount = 0;
+
+  this.runs.forEach(function(run) {
+    if (!run.error) {
+      times.push(run);
+    } else {
+      errorCount++;
+    }
+  });
+
+  let stats = new Stats().push(times);
+  stats = stats.iqr();
+
+  this.mean = stats.amean();
+  this.median = stats.median();
+  let range = stats.range();
+  this.min = range[0];
+  this.max = range[1];
+  this.stddev = stats.stddev();
+  this.moe = stats.moe();
+
+  this.ops = 1e9 / this.mean;
+  this.opsMoe = (1e9 / (this.mean - this.moe)) - this.ops;
+
+  this.errorCount = errorCount;
+  this.errorRate = (errorCount / length);
+  this.totalRuns = length;
+};
+
+Bench.prototype.calculateMarks = function calculateMarks() {
+  let marks = this.marks;
+  let keys = Object.keys(marks);
+  let _this = this;
+
+  keys.forEach(function(key) {
+    let arr = marks[key];
+    let res = {};
+
+    let stats = new Stats().push(arr);
+    stats = stats.iqr();
+
+    res.mean = stats.amean();
+    res.median = stats.median();
+    let range = stats.range();
+    res.min = range[0];
+    res.max = range[1];
+    res.moe = stats.moe();
+
+    res.ops = 1e9 / res.mean;
+    res.opsMoe = (1e9 / (res.mean - res.moe)) - res.ops;
+
+    _this.markData[key] = res;
+  });
+
+  delete this.marks;
 };
 
 module.exports = Bench;</textarea>

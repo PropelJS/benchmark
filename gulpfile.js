@@ -8,7 +8,7 @@ var config = {
   watch: ['lib/**/*.js', '!node_modules/**', '!docs/**', '!bin/**'],
   statementsThreshold: 80,
   functionsThreshold: 80,
-  branchesThreshold: 75,
+  branchesThreshold: 80,
   linesThreshold: 80
 };
 

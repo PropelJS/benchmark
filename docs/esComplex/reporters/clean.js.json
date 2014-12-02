@@ -1,0 +1,905 @@
+{
+  "aggregate": {
+    "sloc": {
+      "logical": 112,
+      "physical": 178
+    },
+    "cyclomatic": 17,
+    "halstead": {
+      "operators": {
+        "distinct": 20,
+        "total": 356,
+        "identifiers": [
+          "let",
+          "=",
+          "()",
+          "if",
+          "===",
+          ".",
+          "function",
+          "! (prefix)",
+          "+=",
+          "+",
+          "/",
+          "*",
+          "-",
+          ">=",
+          ">",
+          "for",
+          "<",
+          "++ (postfix)",
+          "return",
+          "/="
+        ]
+      },
+      "operands": {
+        "distinct": 127,
+        "total": 477,
+        "identifiers": [
+          "\"use strict\"",
+          "chalk",
+          "\"chalk\"",
+          "require",
+          "check",
+          "\"✓\"",
+          "err",
+          "\"✖\"",
+          "process",
+          "platform",
+          "\"win32\"",
+          "\"√\"",
+          "\"×\"",
+          "Clean",
+          "prototype",
+          "output",
+          "suite",
+          "level",
+          2,
+          "children",
+          "_this",
+          "this",
+          "<anonymous>",
+          "child",
+          "outputSuite",
+          "forEach",
+          "suiteTime",
+          "elapsed",
+          "formatTime",
+          "str",
+          "\"\"",
+          "addPadding",
+          "color",
+          "gray",
+          "success",
+          1,
+          "\" \"",
+          "green",
+          0,
+          "red",
+          "\"Suite: \"",
+          "name",
+          "console",
+          "log",
+          "\"Execution Time\"",
+          "outputData",
+          "comp",
+          "\"Fastest Was\"",
+          "fastest",
+          "\" - \"",
+          "fastestOps",
+          "Math",
+          "round",
+          "\" ops/second\"",
+          "\"Slowest Was\"",
+          "slowest",
+          "slowestOps",
+          "bench",
+          "outputBench",
+          "benches",
+          "\"Bench: \"",
+          "opsVal",
+          "ops",
+          "\" ± \"",
+          "opsMoe",
+          "\"Ops Per Second\"",
+          "handleBenchComp",
+          "\"Total Runs\"",
+          "totalRuns",
+          "\"Average Execution Time\"",
+          "mean",
+          "\"Median Execution Time\"",
+          "median",
+          "\"Fastest Run\"",
+          "min",
+          "\"Slowest Run\"",
+          "max",
+          "\"Error Rate\"",
+          "errorRate",
+          "\"%\"",
+          "moePercent",
+          "moe",
+          100,
+          "toFixed",
+          "\"Margin of Error\"",
+          "markData",
+          "outputMarks",
+          "timesFaster",
+          "percentOps",
+          1,
+          "adjective",
+          "\"Faster\"",
+          0,
+          "\"Slower\"",
+          "fasterTitle",
+          "\"Times \"",
+          "\" than \"",
+          "title",
+          "value",
+          "string",
+          "\"  - \"",
+          "\": \"",
+          "cyan",
+          "dim",
+          "white",
+          "marks",
+          "keys",
+          "Object",
+          "length",
+          "key",
+          "outputMark",
+          "mark",
+          "\"Mark: \"",
+          "\"Median Execution TIme\"",
+          "i",
+          "\"  \"",
+          "val",
+          "unit",
+          "\"ns\"",
+          10000000000,
+          1000000000,
+          "\"seconds\"",
+          1000000,
+          "\"ms\"",
+          "_toString",
+          "module",
+          "exports"
+        ]
+      },
+      "length": 833,
+      "vocabulary": 147,
+      "difficulty": 37.55905511811024,
+      "volume": 5997.327063248692,
+      "effort": 225253.93772989183,
+      "bugs": 1.9991090210828972,
+      "time": 12514.107651660657
+    },
+    "params": 21,
+    "line": 1,
+    "cyclomaticDensity": 15.178571428571427
+  },
+  "functions": [
+    {
+      "name": "Clean",
+      "sloc": {
+        "logical": 0,
+        "physical": 2
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 0,
+          "total": 0,
+          "identifiers": [
+          ]
+        },
+        "operands": {
+          "distinct": 0,
+          "total": 0,
+          "identifiers": [
+          ]
+        },
+        "length": 0,
+        "time": 0,
+        "bugs": 0,
+        "effort": 0,
+        "volume": 0,
+        "difficulty": 0,
+        "vocabulary": 0
+      },
+      "params": 0,
+      "line": 12,
+      "cyclomaticDensity": null
+    },
+    {
+      "name": "output",
+      "sloc": {
+        "logical": 6,
+        "physical": 13
+      },
+      "cyclomatic": 3,
+      "halstead": {
+        "operators": {
+          "distinct": 7,
+          "total": 12,
+          "identifiers": [
+            "if",
+            "! (prefix)",
+            "=",
+            "let",
+            ".",
+            "()",
+            "function"
+          ]
+        },
+        "operands": {
+          "distinct": 8,
+          "total": 14,
+          "identifiers": [
+            "suite",
+            "level",
+            2,
+            "children",
+            "_this",
+            "this",
+            "<anonymous>",
+            "forEach"
+          ]
+        },
+        "length": 26,
+        "vocabulary": 15,
+        "difficulty": 6.125,
+        "volume": 101.57915548582149,
+        "effort": 622.1723273506566,
+        "bugs": 0.033859718495273826,
+        "time": 34.5651292972587
+      },
+      "params": 2,
+      "line": 15,
+      "cyclomaticDensity": 50
+    },
+    {
+      "name": "<anonymous>",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 4,
+          "total": 5,
+          "identifiers": [
+            "child",
+            "level",
+            "_this",
+            "outputSuite"
+          ]
+        },
+        "length": 7,
+        "vocabulary": 6,
+        "difficulty": 1.25,
+        "volume": 18.094737505048094,
+        "effort": 22.61842188131012,
+        "bugs": 0.006031579168349364,
+        "time": 1.2565789934061178
+      },
+      "params": 1,
+      "line": 23,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "outputSuite",
+      "sloc": {
+        "logical": 20,
+        "physical": 36
+      },
+      "cyclomatic": 5,
+      "halstead": {
+        "operators": {
+          "distinct": 9,
+          "total": 66,
+          "identifiers": [
+            "let",
+            "=",
+            "()",
+            ".",
+            "+=",
+            "if",
+            "===",
+            "+",
+            "function"
+          ]
+        },
+        "operands": {
+          "distinct": 44,
+          "total": 86,
+          "identifiers": [
+            "suite",
+            "level",
+            "suiteTime",
+            "elapsed",
+            "this",
+            "formatTime",
+            "str",
+            "\"\"",
+            "addPadding",
+            "color",
+            "chalk",
+            "gray",
+            "success",
+            1,
+            "check",
+            "\" \"",
+            "green",
+            0,
+            "err",
+            "red",
+            "\"Suite: \"",
+            "name",
+            "console",
+            "log",
+            "\"Execution Time\"",
+            "outputData",
+            "comp",
+            "\"Fastest Was\"",
+            "fastest",
+            "\" - \"",
+            "fastestOps",
+            "Math",
+            "round",
+            "\" ops/second\"",
+            "\"Slowest Was\"",
+            "slowest",
+            "slowestOps",
+            "_this",
+            "<anonymous>",
+            "benches",
+            "forEach",
+            "children",
+            2,
+            "output"
+          ]
+        },
+        "length": 152,
+        "vocabulary": 53,
+        "difficulty": 8.795454545454545,
+        "volume": 870.6439090936063,
+        "effort": 7657.708927709674,
+        "bugs": 0.2902146363645354,
+        "time": 425.42827376164854
+      },
+      "params": 2,
+      "line": 29,
+      "cyclomaticDensity": 25
+    },
+    {
+      "name": "<anonymous>",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "()",
+            "+",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 5,
+          "total": 6,
+          "identifiers": [
+            "bench",
+            "level",
+            2,
+            "_this",
+            "outputBench"
+          ]
+        },
+        "length": 9,
+        "vocabulary": 8,
+        "difficulty": 1.7999999999999998,
+        "volume": 27,
+        "effort": 48.599999999999994,
+        "bugs": 0.009,
+        "time": 2.6999999999999997
+      },
+      "params": 1,
+      "line": 57,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "outputBench",
+      "sloc": {
+        "logical": 25,
+        "physical": 37
+      },
+      "cyclomatic": 5,
+      "halstead": {
+        "operators": {
+          "distinct": 10,
+          "total": 92,
+          "identifiers": [
+            "let",
+            "=",
+            "()",
+            ".",
+            "if",
+            "===",
+            "+=",
+            "+",
+            "/",
+            "*"
+          ]
+        },
+        "operands": {
+          "distinct": 54,
+          "total": 131,
+          "identifiers": [
+            "bench",
+            "level",
+            "str",
+            "this",
+            "addPadding",
+            "color",
+            "chalk",
+            "gray",
+            "success",
+            1,
+            "check",
+            "\" \"",
+            "green",
+            0,
+            "err",
+            "red",
+            "\"Bench: \"",
+            "name",
+            "console",
+            "log",
+            "opsVal",
+            "ops",
+            "Math",
+            "round",
+            "\" ± \"",
+            "opsMoe",
+            "\"Ops Per Second\"",
+            "outputData",
+            "comp",
+            "handleBenchComp",
+            "\"Total Runs\"",
+            "totalRuns",
+            "\"Average Execution Time\"",
+            "mean",
+            "formatTime",
+            "\"Median Execution Time\"",
+            "median",
+            "\"Fastest Run\"",
+            "min",
+            "\"Slowest Run\"",
+            "max",
+            "\"Error Rate\"",
+            "errorRate",
+            "\"%\"",
+            "moePercent",
+            2,
+            "moe",
+            100,
+            "toFixed",
+            "\"Margin of Error\"",
+            "\"Execution Time\"",
+            "elapsed",
+            "markData",
+            "outputMarks"
+          ]
+        },
+        "length": 223,
+        "vocabulary": 64,
+        "difficulty": 12.12962962962963,
+        "volume": 1338,
+        "effort": 16229.444444444445,
+        "bugs": 0.446,
+        "time": 901.6358024691358
+      },
+      "params": 2,
+      "line": 66,
+      "cyclomaticDensity": 20
+    },
+    {
+      "name": "handleBenchComp",
+      "sloc": {
+        "logical": 7,
+        "physical": 12
+      },
+      "cyclomatic": 2,
+      "halstead": {
+        "operators": {
+          "distinct": 9,
+          "total": 21,
+          "identifiers": [
+            "let",
+            "=",
+            "-",
+            ".",
+            "if",
+            ">=",
+            "/",
+            "+",
+            "()"
+          ]
+        },
+        "operands": {
+          "distinct": 18,
+          "total": 28,
+          "identifiers": [
+            "bench",
+            "level",
+            "timesFaster",
+            "percentOps",
+            1,
+            "adjective",
+            "\"Faster\"",
+            0,
+            "\"Slower\"",
+            100,
+            "fasterTitle",
+            "\"Times \"",
+            "\" than \"",
+            "comp",
+            2,
+            "toFixed",
+            "this",
+            "outputData"
+          ]
+        },
+        "length": 49,
+        "vocabulary": 27,
+        "difficulty": 7,
+        "volume": 232.98948760601,
+        "effort": 1630.9264132420699,
+        "bugs": 0.07766316253533666,
+        "time": 90.60702295789277
+      },
+      "params": 2,
+      "line": 104,
+      "cyclomaticDensity": 28.57142857142857
+    },
+    {
+      "name": "outputData",
+      "sloc": {
+        "logical": 4,
+        "physical": 6
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 6,
+          "total": 15,
+          "identifiers": [
+            "let",
+            "=",
+            "()",
+            ".",
+            "+=",
+            "+"
+          ]
+        },
+        "operands": {
+          "distinct": 14,
+          "total": 21,
+          "identifiers": [
+            "title",
+            "value",
+            "level",
+            "string",
+            "this",
+            "addPadding",
+            "\"  - \"",
+            "\": \"",
+            "chalk",
+            "cyan",
+            "dim",
+            "white",
+            "console",
+            "log"
+          ]
+        },
+        "length": 36,
+        "vocabulary": 20,
+        "difficulty": 4.5,
+        "volume": 155.58941141594505,
+        "effort": 700.1523513717527,
+        "bugs": 0.05186313713864835,
+        "time": 38.89735285398626
+      },
+      "params": 3,
+      "line": 117,
+      "cyclomaticDensity": 25
+    },
+    {
+      "name": "outputMarks",
+      "sloc": {
+        "logical": 4,
+        "physical": 9
+      },
+      "cyclomatic": 2,
+      "halstead": {
+        "operators": {
+          "distinct": 7,
+          "total": 12,
+          "identifiers": [
+            "let",
+            "=",
+            "()",
+            ".",
+            "if",
+            ">",
+            "function"
+          ]
+        },
+        "operands": {
+          "distinct": 10,
+          "total": 14,
+          "identifiers": [
+            "marks",
+            "level",
+            "keys",
+            "Object",
+            "length",
+            1,
+            "_this",
+            "this",
+            "<anonymous>",
+            "forEach"
+          ]
+        },
+        "length": 26,
+        "vocabulary": 17,
+        "difficulty": 4.8999999999999995,
+        "volume": 106.27403387250884,
+        "effort": 520.7427659752932,
+        "bugs": 0.03542467795750295,
+        "time": 28.930153665294068
+      },
+      "params": 2,
+      "line": 124,
+      "cyclomaticDensity": 50
+    },
+    {
+      "name": "<anonymous>",
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 2,
+          "total": 3,
+          "identifiers": [
+            "()",
+            "."
+          ]
+        },
+        "operands": {
+          "distinct": 5,
+          "total": 7,
+          "identifiers": [
+            "key",
+            "marks",
+            "level",
+            "_this",
+            "outputMark"
+          ]
+        },
+        "length": 10,
+        "vocabulary": 7,
+        "difficulty": 1.4,
+        "volume": 28.07354922057604,
+        "effort": 39.302968908806456,
+        "bugs": 0.009357849740192013,
+        "time": 2.1834982727114696
+      },
+      "params": 1,
+      "line": 128,
+      "cyclomaticDensity": 100
+    },
+    {
+      "name": "outputMark",
+      "sloc": {
+        "logical": 10,
+        "physical": 14
+      },
+      "cyclomatic": 1,
+      "halstead": {
+        "operators": {
+          "distinct": 8,
+          "total": 51,
+          "identifiers": [
+            "let",
+            "=",
+            "()",
+            ".",
+            "+=",
+            "+",
+            "/",
+            "*"
+          ]
+        },
+        "operands": {
+          "distinct": 34,
+          "total": 74,
+          "identifiers": [
+            "mark",
+            "name",
+            "level",
+            "str",
+            "this",
+            "addPadding",
+            "\"Mark: \"",
+            "chalk",
+            "gray",
+            "console",
+            "log",
+            "\"Ops Per Second\"",
+            "ops",
+            "Math",
+            "round",
+            "\" ± \"",
+            "opsMoe",
+            "outputData",
+            "\"Average Execution Time\"",
+            "mean",
+            "formatTime",
+            "\"Median Execution TIme\"",
+            "median",
+            "\"Fastest Run\"",
+            "min",
+            "\"Slowest Run\"",
+            "max",
+            "moePercent",
+            2,
+            "moe",
+            100,
+            "toFixed",
+            "\"Margin of Error\"",
+            "\"%\""
+          ]
+        },
+        "length": 125,
+        "vocabulary": 42,
+        "difficulty": 8.705882352941176,
+        "volume": 674.039677847345,
+        "effort": 5868.110136553357,
+        "bugs": 0.2246798926157817,
+        "time": 326.00611869740874
+      },
+      "params": 3,
+      "line": 134,
+      "cyclomaticDensity": 10
+    },
+    {
+      "name": "addPadding",
+      "sloc": {
+        "logical": 5,
+        "physical": 8
+      },
+      "cyclomatic": 2,
+      "halstead": {
+        "operators": {
+          "distinct": 7,
+          "total": 9,
+          "identifiers": [
+            "let",
+            "=",
+            "for",
+            "<",
+            "++ (postfix)",
+            "+=",
+            "return"
+          ]
+        },
+        "operands": {
+          "distinct": 6,
+          "total": 11,
+          "identifiers": [
+            "level",
+            "str",
+            "\"\"",
+            "i",
+            0,
+            "\"  \""
+          ]
+        },
+        "length": 20,
+        "vocabulary": 13,
+        "difficulty": 6.416666666666666,
+        "volume": 74.00879436282185,
+        "effort": 474.8897638281068,
+        "bugs": 0.024669598120940616,
+        "time": 26.382764657117047
+      },
+      "params": 1,
+      "line": 149,
+      "cyclomaticDensity": 40
+    },
+    {
+      "name": "formatTime",
+      "sloc": {
+        "logical": 10,
+        "physical": 19
+      },
+      "cyclomatic": 3,
+      "halstead": {
+        "operators": {
+          "distinct": 9,
+          "total": 19,
+          "identifiers": [
+            "let",
+            "=",
+            "if",
+            ">",
+            "/=",
+            "()",
+            ".",
+            "+",
+            "return"
+          ]
+        },
+        "operands": {
+          "distinct": 12,
+          "total": 25,
+          "identifiers": [
+            "val",
+            "unit",
+            "\"ns\"",
+            10000000000,
+            1000000000,
+            "\"seconds\"",
+            1000000,
+            "\"ms\"",
+            2,
+            "toFixed",
+            "_toString",
+            "\" \""
+          ]
+        },
+        "length": 44,
+        "vocabulary": 21,
+        "difficulty": 9.375,
+        "volume": 193.26196660226546,
+        "effort": 1811.8309368962387,
+        "bugs": 0.06442065553408849,
+        "time": 100.65727427201325
+      },
+      "params": 1,
+      "line": 158,
+      "cyclomaticDensity": 30
+    }
+  ],
+  "dependencies": [
+    {
+      "line": 3,
+      "path": "chalk",
+      "type": "CommonJS"
+    }
+  ],
+  "maintainability": 65.3227908259943,
+  "params": 1.6153846153846154,
+  "meta": {
+    "analysis": "gulp-escomplex",
+    "analysisVersion": "1.0.1",
+    "fileName": "reporters/clean.js"
+  }
+}

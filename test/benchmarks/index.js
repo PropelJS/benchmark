@@ -13,8 +13,6 @@ suite('main', function * main () {
       timer.mark('four');
       timer.mark('last');
     });
-  }, {
-    minOps: 1000
   });
 
   bench('bench', function * innerBench (timer) {
@@ -25,15 +23,12 @@ suite('main', function * main () {
     timer.mark('last');
   });
 }, {
-  comp: 'bench',
-  minOps: 1
+  comp: 'bench'
 });
 
 suite('error', function * errorSuite () {
   bench('error', function * errorBench() {
     return true;
-  }, {
-    minOps: 1e9
   });
 }, {
   comp: 'any'

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - reporters/clean.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>reporters/clean.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">65.32</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">178</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">37.56</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">2.00</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">&#039;use strict&#039;;
+
+let chalk = require(&#039;chalk&#039;);
+let check = &#039;✓&#039;;
+let err = &#039;✖&#039;;
+
+if (process.platform === &#039;win32&#039;) {
+  check = &#039;\u221A&#039;;
+  err = &#039;\u00D7&#039;;
+}
+
+function Clean() {
+}
+
+Clean.prototype.output = function output(suite, level) {
+  if (!level) {
+    level = 2;
+  }
+
+  let children = suite.children;
+  let _this = this;
+  if (children) {
+    children.forEach(function(child) {
+      _this.outputSuite(child, level);
+    });
+  }
+};
+
+Clean.prototype.outputSuite = function outputSuite(suite, level) {
+  let suiteTime = this.formatTime(suite.elapsed);
+
+  let str = &#039;&#039;;
+  str += this.addPadding(level);
+  let color = chalk.gray;
+
+  if (suite.success === true) {
+    str += check + &#039; &#039;;
+    color = chalk.green;
+  }
+
+  if (suite.success === false) {
+    str += err + &#039; &#039;;
+    color = chalk.red;
+  }
+
+  str += &#039;Suite: &#039; + suite.name;
+  console.log(color(str));
+
+  this.outputData(&#039;Execution Time&#039;, suiteTime, level);
+
+  if (suite.comp) {
+    this.outputData(&#039;Fastest Was&#039;, suite.fastest + &#039; - &#039; + Math.round(suite.fastestOps) + &#039; ops/second&#039;, level);
+    this.outputData(&#039;Slowest Was&#039;, suite.slowest + &#039; - &#039; + Math.round(suite.slowestOps) + &#039; ops/second&#039;, level);
+  }
+
+  let _this = this;
+  suite.benches.forEach(function(bench) {
+    _this.outputBench(bench, level + 2);
+  });
+
+  if (suite.children) {
+    this.output(suite, level + 2);
+  }
+};
+
+Clean.prototype.outputBench = function outputBench(bench, level) {
+  let str = this.addPadding(level);
+  let color = chalk.gray;
+  if (bench.success === true) {
+    str += check + &#039; &#039;;
+    color = chalk.green;
+  }
+  if (bench.success === false) {
+    str += err + &#039; &#039;;
+    color = chalk.red;
+  }
+  str += &#039;Bench: &#039; + bench.name;
+  console.log(color(str));
+
+  let opsVal = Math.round(bench.ops) + &#039; \u00B1 &#039; + Math.round(bench.opsMoe);
+  this.outputData(&#039;Ops Per Second&#039;, opsVal, level);
+
+  if (bench.comp) {
+    this.handleBenchComp(bench, level);
+  }
+
+  this.outputData(&#039;Total Runs&#039;, bench.totalRuns, level);
+  this.outputData(&#039;Average Execution Time&#039;, this.formatTime(bench.mean), level);
+  this.outputData(&#039;Median Execution Time&#039;, this.formatTime(bench.median), level);
+  this.outputData(&#039;Fastest Run&#039;, this.formatTime(bench.min), level);
+  this.outputData(&#039;Slowest Run&#039;, this.formatTime(bench.max), level);
+  this.outputData(&#039;Error Rate&#039;, bench.errorRate + &#039;%&#039;, level);
+
+  let moePercent = (bench.moe * 100 / bench.mean).toFixed(2);
+  this.outputData(&#039;Margin of Error&#039;, moePercent + &#039;%&#039;, level);
+
+  this.outputData(&#039;Execution Time&#039;, this.formatTime(bench.elapsed), level);
+
+  if (bench.markData) {
+    this.outputMarks(bench.markData, level + 2);
+  }
+};
+
+Clean.prototype.handleBenchComp = function handleBenchComp(bench, level) {
+  let timesFaster = bench.percentOps - 1;
+  let adjective = &#039;Faster&#039;;
+
+  if (timesFaster &gt;= 0) {
+    adjective = &#039;Slower&#039;;
+    timesFaster = 100 / timesFaster;
+  }
+
+  let fasterTitle = &#039;Times &#039; + adjective + &#039; than &#039; + bench.comp;
+  this.outputData(fasterTitle, timesFaster.toFixed(2), level);
+};
+
+Clean.prototype.outputData = function outputData(title, value, level) {
+  let string = this.addPadding(level);
+  string += &#039;  - &#039; + title + &#039;: &#039;;
+  string += chalk.cyan.dim(value);
+  console.log(chalk.white(string));
+};
+
+Clean.prototype.outputMarks = function outputMarks(marks, level) {
+  let keys = Object.keys(marks);
+  if (keys.length &gt; 1) {
+    let _this = this;
+    keys.forEach(function(key) {
+      _this.outputMark(marks[key], key, level);
+    });
+  }
+};
+
+Clean.prototype.outputMark = function outputMark(mark, name, level) {
+  let str = this.addPadding(level);
+  str += &#039;Mark: &#039; + name;
+  console.log(chalk.gray(str));
+
+  this.outputData(&#039;Ops Per Second&#039;, Math.round(mark.ops) + &#039; \u00B1 &#039; + Math.round(mark.opsMoe), level);
+  this.outputData(&#039;Average Execution Time&#039;, this.formatTime(mark.mean), level);
+  this.outputData(&#039;Median Execution TIme&#039;, this.formatTime(mark.median), level);
+  this.outputData(&#039;Fastest Run&#039;, this.formatTime(mark.min), level);
+  this.outputData(&#039;Slowest Run&#039;, this.formatTime(mark.max), level);
+
+  let moePercent = (mark.moe * 100 / mark.mean).toFixed(2);
+  this.outputData(&#039;Margin of Error&#039;, moePercent + &#039;%&#039;, level);
+};
+
+Clean.prototype.addPadding = function addPadding(level) {
+  let str = &#039;&#039;;
+  for (let i = 0; i &lt; level; i++) {
+    str += &#039;  &#039;;
+  }
+
+  return str;
+};
+
+Clean.prototype.formatTime = function formatTime(val) {
+  let unit = &#039;ns&#039;;
+
+  if (val &gt; 1e10) {
+    val /= 1e9;
+    unit = &#039;seconds&#039;;
+  }
+
+  if (val &gt; 1e6) {
+    val /= 1e6;
+    unit = &#039;ms&#039;;
+  }
+
+  val = val.toFixed(2);
+
+  val = val.toString() + &#039; &#039; + unit;
+
+  return val;
+};
+
+module.exports = Clean;</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ complexity.cyclomatic }} <br>
+    Length : {{ complexity.halstead.length }} <br>
+    Difficulty : {{ complexity.halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ complexity.halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

@@ -1,128 +1,124 @@
 {
   "aggregate": {
     "sloc": {
-      "logical": 5,
-      "physical": 11
+      "logical": 12,
+      "physical": 23
     },
     "cyclomatic": 1,
     "halstead": {
       "operators": {
-        "distinct": 4,
-        "total": 9,
+        "distinct": 10,
+        "total": 17,
         "identifiers": [
           "function",
+          "var",
           "=",
-          ".",
-          "()"
+          "()",
+          "+",
+          "return",
+          "new",
+          "catch",
+          "throw",
+          "."
         ]
       },
       "operands": {
-        "distinct": 10,
-        "total": 13,
+        "distinct": 12,
+        "total": 19,
         "identifiers": [
           "\"use strict\"",
           "Reporter",
-          "opts",
-          "prototype",
-          "output",
-          "\"output would go here\"",
-          "console",
-          "log",
+          "reporter",
+          "Rep",
+          "\"../reporters/\"",
+          "require",
+          "e",
+          "err",
+          "\"Invalid reporter\"",
+          "Error",
           "module",
           "exports"
         ]
       },
-      "length": 22,
-      "vocabulary": 14,
-      "difficulty": 2.6,
-      "volume": 83.76180828526728,
-      "effort": 217.78070154169492,
-      "bugs": 0.02792060276175576,
-      "time": 12.098927863427496
+      "length": 36,
+      "vocabulary": 22,
+      "difficulty": 7.916666666666666,
+      "volume": 160.5395382709427,
+      "effort": 1270.9380113116297,
+      "bugs": 0.05351317942364757,
+      "time": 70.60766729509054
     },
     "params": 1,
     "line": 1,
-    "cyclomaticDensity": 20
+    "cyclomaticDensity": 8.333333333333332
   },
   "functions": [
     {
       "name": "Reporter",
       "sloc": {
-        "logical": 0,
-        "physical": 3
+        "logical": 9,
+        "physical": 13
       },
       "cyclomatic": 1,
       "halstead": {
         "operators": {
-          "distinct": 0,
-          "total": 0,
+          "distinct": 8,
+          "total": 14,
           "identifiers": [
+            "var",
+            "=",
+            "()",
+            "+",
+            "return",
+            "new",
+            "catch",
+            "throw"
           ]
         },
         "operands": {
-          "distinct": 1,
-          "total": 1,
+          "distinct": 8,
+          "total": 14,
           "identifiers": [
-            "opts"
+            "reporter",
+            "Rep",
+            "\"../reporters/\"",
+            "require",
+            "e",
+            "err",
+            "\"Invalid reporter\"",
+            "Error"
           ]
         },
-        "length": 1,
-        "vocabulary": 1,
-        "difficulty": 0,
-        "volume": 0,
-        "effort": 0,
-        "bugs": 0,
-        "time": 0
+        "length": 28,
+        "vocabulary": 16,
+        "difficulty": 7,
+        "volume": 112,
+        "effort": 784,
+        "bugs": 0.037333333333333336,
+        "time": 43.55555555555556
       },
       "params": 1,
-      "line": 3,
-      "cyclomaticDensity": null
-    },
-    {
-      "name": "output",
-      "sloc": {
-        "logical": 1,
-        "physical": 3
-      },
-      "cyclomatic": 1,
-      "halstead": {
-        "operators": {
-          "distinct": 2,
-          "total": 2,
-          "identifiers": [
-            "()",
-            "."
-          ]
-        },
-        "operands": {
-          "distinct": 3,
-          "total": 3,
-          "identifiers": [
-            "\"output would go here\"",
-            "console",
-            "log"
-          ]
-        },
-        "length": 5,
-        "vocabulary": 5,
-        "difficulty": 1,
-        "volume": 11.60964047443681,
-        "effort": 11.60964047443681,
-        "bugs": 0.0038698801581456034,
-        "time": 0.6449800263576005
-      },
-      "params": 0,
-      "line": 7,
-      "cyclomaticDensity": 100
+      "line": 9,
+      "cyclomaticDensity": 11.11111111111111
     }
   ],
   "dependencies": [
+    {
+      "line": 11,
+      "path": "* dynamic dependency *",
+      "type": "CommonJS"
+    },
+    {
+      "line": 15,
+      "path": "* dynamic dependency *",
+      "type": "CommonJS"
+    }
   ],
-  "maintainability": 100,
-  "params": 0.5,
+  "maintainability": 65.85537017400868,
+  "params": 1,
   "meta": {
     "analysis": "gulp-escomplex",
     "analysisVersion": "1.0.1",
-    "fileName": "lib\reporter.js"
+    "fileName": "lib/reporter.js"
   }
 }

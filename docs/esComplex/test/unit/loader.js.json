@@ -1,0 +1,59 @@
+{
+  "aggregate": {
+    "sloc": {
+      "logical": 3,
+      "physical": 4
+    },
+    "cyclomatic": 1,
+    "halstead": {
+      "operators": {
+        "distinct": 1,
+        "total": 2,
+        "identifiers": [
+          "()"
+        ]
+      },
+      "operands": {
+        "distinct": 4,
+        "total": 5,
+        "identifiers": [
+          "\"use strict\"",
+          "\"should\"",
+          "require",
+          "\"co-mocha\""
+        ]
+      },
+      "length": 7,
+      "vocabulary": 5,
+      "difficulty": 0.625,
+      "volume": 16.253496664211536,
+      "effort": 10.15843541513221,
+      "bugs": 0.005417832221403845,
+      "time": 0.5643575230629005
+    },
+    "params": 0,
+    "line": 1,
+    "cyclomaticDensity": 33.33333333333333
+  },
+  "functions": [
+  ],
+  "dependencies": [
+    {
+      "line": 3,
+      "path": "should",
+      "type": "CommonJS"
+    },
+    {
+      "line": 4,
+      "path": "co-mocha",
+      "type": "CommonJS"
+    }
+  ],
+  "maintainability": 84.95548523591805,
+  "params": 0,
+  "meta": {
+    "analysis": "gulp-escomplex",
+    "analysisVersion": "1.0.1",
+    "fileName": "test/unit/loader.js"
+  }
+}

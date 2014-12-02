@@ -1,20 +1,26 @@
 {
   "reports": [
     "gulpfile.js.json",
-    "benchmarks\index.js.json",
-    "benchmarks\reporter.js.json",
-    "lib\bench.js.json",
-    "lib\index.js.json",
-    "lib\loader.js.json",
-    "lib\reporter.js.json",
-    "lib\runner.js.json",
-    "lib\suite.js.json"
+    "lib/bench.js.json",
+    "lib/index.js.json",
+    "lib/loader.js.json",
+    "lib/reporter.js.json",
+    "lib/runner.js.json",
+    "lib/suite.js.json",
+    "reporters/clean.js.json",
+    "test/benchmarks/index.js.json",
+    "test/unit/bench.js.json",
+    "test/unit/index.js.json",
+    "test/unit/loader.js.json",
+    "test/unit/reporter.js.json",
+    "test/unit/runner.js.json",
+    "test/unit/suite.js.json"
   ],
-  "baseDir": "c:\var\node\propel\benchmark\",
-  "cwd": "c:\var\node\propel\benchmark",
+  "baseDir": "/var/node/propel/benchmark/",
+  "cwd": "/var/node/propel/benchmark",
   "reporterName": "gulp-escomplex-reporter-json",
   "reporterVersion": "1.0.0",
   "analysis": "gulp-escomplex",
   "analysisVersion": "1.0.1",
-  "created": "2014-11-18T09:02:14.238Z"
+  "created": "2014-12-01T22:51:34.193Z"
 }
